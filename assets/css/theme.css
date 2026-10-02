@@ -43,78 +43,10 @@
 }
 
 /* ==========================================================================
-   LIGHT THEME (Default)
-   Warm ivory, soft beige, espresso, charcoal, taupe, muted olive, champagne
-   ========================================================================== */
-:root,
-[data-theme="light"] {
-  --color-scheme: light;
-
-  /* Backgrounds */
-  --bg-body: #FBF9F5;
-  --bg-surface: #FFFFFF;
-  --bg-surface-elevated: #F6F3EC;
-  --bg-surface-subtle: #F0EAE1;
-  --bg-alt: #F3EFE7;
-  --bg-overlay: rgba(28, 25, 23, 0.55);
-  --bg-glass: rgba(251, 249, 245, 0.82);
-  --bg-glass-card: rgba(255, 255, 255, 0.75);
-
-  /* Typography Colors */
-  --text-primary: #1C1917;       /* Espresso charcoal */
-  --text-secondary: #4E4742;     /* Medium espresso */
-  --text-muted: #79716B;         /* Warm taupe gray */
-  --text-tertiary: #A69E96;      /* Light warm taupe */
-  --text-inverse: #FBF9F5;
-
-  /* Borders & Dividers */
-  --border-subtle: #EDE7DD;
-  --border-medium: #DED6C9;
-  --border-focus: #1C1917;
-  --border-accent: #C5A880;
-
-  /* Brand Accents & Editorial Palette */
-  --accent-primary: #1C1917;     /* High-fashion primary black/espresso */
-  --accent-primary-hover: #332F2C;
-  --accent-gold: #C5A880;        /* Soft Champagne */
-  --accent-gold-light: #F4ECE1;
-  --accent-olive: #5A6351;       /* Muted Olive */
-  --accent-olive-light: #EEF2EB;
-  --accent-taupe: #8C8075;       /* Warm Taupe */
-  --accent-taupe-light: #F5F2EF;
-  --accent-terracotta: #A45D4B;  /* Earthy Terracotta */
-  --accent-terracotta-light: #FBF0ED;
-  --accent-cream: #F5EFEB;
-
-  /* Feedback / Status */
-  --status-success: #3A6351;
-  --status-success-bg: #EDF5F0;
-  --status-warning: #A16207;
-  --status-warning-bg: #FEF9C3;
-  --status-error: #991B1B;
-  --status-error-bg: #FEF2F2;
-  --status-info: #3B5A75;
-  --status-info-bg: #F0F5FA;
-
-  /* Interactive States */
-  --interactive-hover: rgba(28, 25, 23, 0.04);
-  --interactive-active: rgba(28, 25, 23, 0.08);
-
-  /* Badge / Tag */
-  --badge-bg: #EFE9DF;
-  --badge-text: #3D3732;
-
-  /* Inputs */
-  --input-bg: #FFFFFF;
-  --input-border: #DED6C9;
-  --input-focus-border: #1C1917;
-  --input-placeholder: #9E968E;
-}
-
-/* ==========================================================================
-   DARK THEME
+   DARK THEME (Default)
    Deep espresso, charcoal, rich onyx, warm bronze, champagne, muted olive
    ========================================================================== */
+:root,
 [data-theme="dark"] {
   --color-scheme: dark;
 
@@ -184,6 +116,74 @@
   --shadow-hover: 0 16px 36px -6px rgba(0, 0, 0, 0.6);
   --shadow-modal: 0 24px 60px -12px rgba(0, 0, 0, 0.85);
   --shadow-glow: 0 0 30px rgba(216, 188, 148, 0.15);
+}
+
+/* ==========================================================================
+   LIGHT THEME
+   Warm ivory, soft beige, espresso, charcoal, taupe, muted olive, champagne
+   ========================================================================== */
+[data-theme="light"] {
+  --color-scheme: light;
+
+  /* Backgrounds */
+  --bg-body: #FBF9F5;
+  --bg-surface: #FFFFFF;
+  --bg-surface-elevated: #F6F3EC;
+  --bg-surface-subtle: #F0EAE1;
+  --bg-alt: #F3EFE7;
+  --bg-overlay: rgba(28, 25, 23, 0.55);
+  --bg-glass: rgba(251, 249, 245, 0.82);
+  --bg-glass-card: rgba(255, 255, 255, 0.75);
+
+  /* Typography Colors */
+  --text-primary: #1C1917;       /* Espresso charcoal */
+  --text-secondary: #4E4742;     /* Medium espresso */
+  --text-muted: #79716B;         /* Warm taupe gray */
+  --text-tertiary: #A69E96;      /* Light warm taupe */
+  --text-inverse: #FBF9F5;
+
+  /* Borders & Dividers */
+  --border-subtle: #EDE7DD;
+  --border-medium: #DED6C9;
+  --border-focus: #1C1917;
+  --border-accent: #C5A880;
+
+  /* Brand Accents & Editorial Palette */
+  --accent-primary: #1C1917;     /* High-fashion primary black/espresso */
+  --accent-primary-hover: #332F2C;
+  --accent-gold: #C5A880;        /* Soft Champagne */
+  --accent-gold-light: #F4ECE1;
+  --accent-olive: #5A6351;       /* Muted Olive */
+  --accent-olive-light: #EEF2EB;
+  --accent-taupe: #8C8075;       /* Warm Taupe */
+  --accent-taupe-light: #F5F2EF;
+  --accent-terracotta: #A45D4B;  /* Earthy Terracotta */
+  --accent-terracotta-light: #FBF0ED;
+  --accent-cream: #F5EFEB;
+
+  /* Feedback / Status */
+  --status-success: #3A6351;
+  --status-success-bg: #EDF5F0;
+  --status-warning: #A16207;
+  --status-warning-bg: #FEF9C3;
+  --status-error: #991B1B;
+  --status-error-bg: #FEF2F2;
+  --status-info: #3B5A75;
+  --status-info-bg: #F0F5FA;
+
+  /* Interactive States */
+  --interactive-hover: rgba(28, 25, 23, 0.04);
+  --interactive-active: rgba(28, 25, 23, 0.08);
+
+  /* Badge / Tag */
+  --badge-bg: #EFE9DF;
+  --badge-text: #3D3732;
+
+  /* Inputs */
+  --input-bg: #FFFFFF;
+  --input-border: #DED6C9;
+  --input-focus-border: #1C1917;
+  --input-placeholder: #9E968E;
 }
 
 /* Image treatment for dark mode subtle brightness moderation */

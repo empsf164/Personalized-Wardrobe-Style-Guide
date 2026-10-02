@@ -90,7 +90,7 @@ const DEFAULT_WARDROBE_ITEMS = [
   },
   {
     id: 'w-8',
-    name: 'Classic Minimalist Leather Sneakers',
+    name: 'Minimalist Leather Sneakers',
     category: 'shoes',
     color: 'Ivory',
     colorHex: '#FAF7F0',
@@ -102,7 +102,7 @@ const DEFAULT_WARDROBE_ITEMS = [
   },
   {
     id: 'w-9',
-    name: 'Pleated Wide-Leg Linen Trousers',
+    name: 'Wide-Leg Linen Trousers',
     category: 'bottoms',
     color: 'Olive',
     colorHex: '#5A6351',
@@ -155,7 +155,23 @@ const WardrobeManager = {
     const saved = localStorage.getItem('editform_wardrobe');
     if (saved) {
       try {
-        return JSON.parse(saved);
+        let items = JSON.parse(saved);
+        let updated = false;
+        items = items.map(item => {
+          if (item.name === 'Classic Minimalist Leather Sneakers') {
+            item.name = 'Minimalist Leather Sneakers';
+            updated = true;
+          }
+          if (item.name === 'Pleated Wide-Leg Linen Trousers') {
+            item.name = 'Wide-Leg Linen Trousers';
+            updated = true;
+          }
+          return item;
+        });
+        if (updated) {
+          localStorage.setItem('editform_wardrobe', JSON.stringify(items));
+        }
+        return items;
       } catch (e) {
         console.error('Error reading wardrobe storage', e);
       }

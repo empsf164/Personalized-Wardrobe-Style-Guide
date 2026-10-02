@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // --------------------------------------------------------------------------
-  // 7. General Interactive Form Handler
+  // 7. General Interactive Form Handler & Social Auth
   // --------------------------------------------------------------------------
   document.querySelectorAll('form[data-ajax="mock"]').forEach(form => {
     form.addEventListener('submit', (e) => {
@@ -228,6 +228,26 @@ document.addEventListener('DOMContentLoaded', () => {
       const actionName = form.getAttribute('data-success-msg') || 'Information submitted successfully';
       window.showToast(actionName, 'success');
       form.reset();
+      if (form.id === 'login-form' || form.id === 'signup-form') {
+        setTimeout(() => {
+          window.location.href = 'style-profile.html';
+        }, 1200);
+      }
+    });
+  });
+
+  // Social Auth Buttons (Google & Apple)
+  document.querySelectorAll('.social-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const provider = btn.innerText.trim();
+      window.showToast(`Authenticating with ${provider}...`, 'info');
+      setTimeout(() => {
+        window.showToast(`Welcome! Successfully signed in with ${provider}.`, 'success');
+        setTimeout(() => {
+          window.location.href = 'style-profile.html';
+        }, 1000);
+      }, 800);
     });
   });
 });

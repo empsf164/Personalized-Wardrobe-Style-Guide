@@ -34,7 +34,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   Tablet & iPad Landscapes (max-width: 1024px)
+   Tablet & iPad Landscapes & 1024px View (max-width: 1024px)
    -------------------------------------------------------------------------- */
 @media (max-width: 1024px) {
   .nav-desktop {
@@ -69,32 +69,66 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 2.5rem;
   }
-  .auth-wrapper {
-    grid-template-columns: 1fr;
+
+  /* Align 2 cards in one row across all sections on all pages */
+  .grid-2,
+  .grid-3,
+  .grid-4,
+  .steps-grid,
+  .wardrobe-grid,
+  .outfits-grid,
+  .quiz-options-grid,
+  .curated-grid,
+  #home-quiz-preview-grid,
+  #guide-palette-container,
+  #guide-silhouettes-container,
+  #guide-essentials-container,
+  #guide-formulas-container,
+  #profile-palette-grid,
+  #profile-silhouettes-grid,
+  #slot-options-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.5rem !important;
   }
-  .auth-visual {
-    display: none;
+
+  /* Last odd-numbered card centered horizontally across both columns */
+  .grid-2 > :last-child:nth-child(odd),
+  .grid-3 > :last-child:nth-child(odd),
+  .grid-4 > :last-child:nth-child(odd),
+  .steps-grid > :last-child:nth-child(odd),
+  .wardrobe-grid > :last-child:nth-child(odd),
+  .outfits-grid > :last-child:nth-child(odd),
+  .quiz-options-grid > :last-child:nth-child(odd),
+  .curated-grid > :last-child:nth-child(odd),
+  #home-quiz-preview-grid > :last-child:nth-child(odd),
+  #guide-palette-container > :last-child:nth-child(odd),
+  #guide-silhouettes-container > :last-child:nth-child(odd),
+  #guide-essentials-container > :last-child:nth-child(odd),
+  #guide-formulas-container > :last-child:nth-child(odd),
+  #profile-palette-grid > :last-child:nth-child(odd),
+  #profile-silhouettes-grid > :last-child:nth-child(odd),
+  #slot-options-grid > :last-child:nth-child(odd) {
+    grid-column: 1 / -1 !important;
+    justify-self: center !important;
+    width: 100% !important;
+    max-width: 520px !important;
   }
-  .grid-3 {
-    grid-template-columns: repeat(2, 1fr);
+
+  .inspiration-masonry {
+    column-count: 2 !important;
   }
-  .grid-4 {
-    grid-template-columns: repeat(2, 1fr);
-  }
+
   .quiz-result-grid {
     grid-template-columns: 1fr;
   }
 }
 
 /* --------------------------------------------------------------------------
-   Small Tablets & Large Phones (max-width: 768px)
+   Small Tablets (max-width: 768px)
    -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
   .navbar {
     height: 70px;
-  }
-  .steps-grid {
-    grid-template-columns: 1fr;
   }
   .wardrobe-toolbar {
     flex-direction: column;
@@ -114,22 +148,44 @@
   .canvas-slots-grid {
     grid-template-columns: 1fr;
   }
-  .inspiration-masonry {
-    column-count: 1;
-  }
-  .grid-2,
-  .grid-3,
-  .grid-4 {
-    grid-template-columns: 1fr;
-  }
   .footer-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
   }
   .footer-bottom {
     flex-direction: column;
     text-align: center;
     gap: 0.8rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Mobile Phones (max-width: 580px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 580px) {
+  .grid-2,
+  .grid-3,
+  .grid-4,
+  .steps-grid,
+  .wardrobe-grid,
+  .outfits-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .grid-2 > :last-child:nth-child(odd),
+  .grid-3 > :last-child:nth-child(odd),
+  .grid-4 > :last-child:nth-child(odd),
+  .steps-grid > :last-child:nth-child(odd),
+  .wardrobe-grid > :last-child:nth-child(odd),
+  .outfits-grid > :last-child:nth-child(odd) {
+    grid-column: 1 / -1 !important;
+    max-width: 100% !important;
+  }
+  .inspiration-masonry {
+    column-count: 1 !important;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem;
   }
   .quiz-options-grid {
     grid-template-columns: 1fr 1fr;
@@ -184,6 +240,17 @@
   }
   .modal-content {
     padding: 1.5rem 1.2rem;
+  }
+  .map-location-badge {
+    position: static;
+    border-radius: 0;
+    max-width: 100%;
+  }
+  .map-embed-wrapper {
+    height: auto;
+  }
+  .map-embed-wrapper iframe {
+    height: 280px;
   }
   #toast-container {
     left: 1rem;

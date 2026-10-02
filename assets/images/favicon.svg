@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="16" fill="#11100F"/>
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="none" stroke="#D8BC94" stroke-width="1.5" stroke-opacity="0.5"/>
+  <g transform="translate(4, 4)">
+    <!-- Minimalist Coat Hanger / Architectural Silhouette Top Accent -->
+    <path d="M 28 10 C 28 7, 25 5, 23 7 C 21 9, 24 12, 28 14 L 10 24 L 46 24 Z" fill="none" stroke="#D8BC94" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+    <!-- Editorial Brand Monogram "E / F" -->
+    <text x="13" y="47" font-family="'DM Serif Display', Georgia, serif" font-size="24" font-weight="bold" fill="#F7F4EE">E</text>
+    <path d="M 29 30 L 27 51" stroke="#D8BC94" stroke-width="2.2" stroke-linecap="round"/>
+    <text x="31" y="47" font-family="'DM Serif Display', Georgia, serif" font-size="24" font-weight="bold" fill="#D8BC94">F</text>
+  </g>
+</svg>

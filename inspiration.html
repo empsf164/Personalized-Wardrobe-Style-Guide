@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +9,7 @@
   <meta property="og:description" content="Discover refined editorial looks and translate them into your wardrobe.">
 
   <!-- Core Stylesheets -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="assets/css/theme.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
@@ -46,34 +47,16 @@
           <li class="nav-item"><a href="wardrobe.html" class="nav-link">Wardrobe</a></li>
           <li class="nav-item"><a href="outfits.html" class="nav-link">Outfits</a></li>
           <li class="nav-item"><a href="style-guide.html" class="nav-link">Style Guide</a></li>
-          <li class="nav-item"><a href="inspiration.html" class="nav-link active">Inspiration</a></li>
           <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
 
         <div class="nav-actions">
-          <button class="theme-toggle" id="theme-toggle-btn" aria-label="Toggle theme">
-            <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="5"></circle>
-              <line x1="12" y1="1" x2="12" y2="3"></line>
-              <line x1="12" y1="21" x2="12" y2="23"></line>
-              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-              <line x1="1" y1="12" x2="3" y2="12"></line>
-              <line x1="21" y1="12" x2="23" y2="12"></line>
-              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-            </svg>
-            <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-            </svg>
-          </button>
-          <a href="login.html" class="nav-link" style="font-weight: 600;">Login</a>
-          <a href="signup.html" class="nav-link" style="font-weight: 600;">Sign Up</a>
-          <a href="style-quiz.html" class="btn btn-primary btn-sm">Build My Style</a>
+          <a href="login.html" class="btn btn-primary btn-sm">Login</a>
         </div>
       </nav>
 
-      <button class="hamburger" id="hamburger-btn" aria-label="Toggle mobile menu">
+      <button class="hamburger" id="hamburger-btn" aria-label="Toggle mobile menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -102,14 +85,12 @@
         <li><a href="wardrobe.html">Wardrobe</a></li>
         <li><a href="outfits.html">Outfits</a></li>
         <li><a href="style-guide.html">Style Guide</a></li>
-        <li><a href="inspiration.html" class="active">Inspiration</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
     <div class="mobile-actions">
-      <a href="login.html" class="btn btn-secondary" style="width: 100%;">Login</a>
-      <a href="style-quiz.html" class="btn btn-primary" style="width: 100%;">Build My Style</a>
+      <a href="login.html" class="btn btn-primary" style="width: 100%;">Login</a>
     </div>
   </aside>
 
@@ -271,15 +252,34 @@
   </main>
 
   <!-- =========================================================================
-       FOOTER
+       MANDATORY 4-COLUMN FOOTER
        ========================================================================= -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
+        <!-- Column 1: Brand & Tagline -->
         <div class="footer-brand">
           <a href="index.html" class="brand-logo">EDIT <span class="divider">/</span> FORM</a>
           <p class="footer-tagline">Your Wardrobe. Your Style. Refined.</p>
+          <div class="footer-social-links">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="btn-icon" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" class="btn-icon" aria-label="Pinterest">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="8" x2="12" y2="16"></line>
+                <line x1="8" y1="12" x2="16" y2="12"></line>
+                <circle cx="12" cy="12" r="10"></circle>
+              </svg>
+            </a>
+          </div>
         </div>
+
+        <!-- Column 2: Style Navigation -->
         <div>
           <h4 class="footer-title">STYLE</h4>
           <ul class="footer-links">
@@ -289,6 +289,8 @@
             <li><a href="style-guide.html">Style Guide</a></li>
           </ul>
         </div>
+
+        <!-- Column 3: Explore Navigation -->
         <div>
           <h4 class="footer-title">EXPLORE</h4>
           <ul class="footer-links">
@@ -298,17 +300,27 @@
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
+
+        <!-- Column 4: Support Navigation -->
         <div>
           <h4 class="footer-title">SUPPORT</h4>
           <ul class="footer-links">
             <li><a href="contact.html">Help</a></li>
             <li><a href="about.html#privacy">Privacy</a></li>
             <li><a href="about.html#terms">Terms</a></li>
+            <li><a href="about.html#accessibility">Accessibility</a></li>
           </ul>
         </div>
       </div>
+
+      <!-- Footer Bottom -->
       <div class="footer-bottom">
         <div>&copy; 2026 EDIT / FORM. All rights reserved.</div>
+        <div class="flex gap-md">
+          <a href="about.html" style="color: var(--text-muted);">Personal Styling Web App</a>
+          <span style="color: var(--border-medium);">·</span>
+          <a href="coming-soon.html" style="color: var(--text-muted);">VIP Stylist Beta</a>
+        </div>
       </div>
     </div>
   </footer>

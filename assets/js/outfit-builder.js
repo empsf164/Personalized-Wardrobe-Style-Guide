@@ -14,7 +14,7 @@ const PRESET_OUTFITS = [
     layerId: 'w-3',
     shoesId: 'w-5',
     accessoryId: 'w-6',
-    items: ['Relaxed Silk Linen Shirt', 'High-Waist Tailored Trousers', 'Double-Breasted Wool Blazer', 'Point-Toe Leather Ankle Boots', 'Structured Leather Tote'],
+    items: ['Relaxed Silk Linen Shirt', 'High-Waist Tailored Trousers', 'Double-Breasted Wool Blazer', 'Point-Toe Leather Ankle Boots'],
     images: [
       'https://images.unsplash.com/photo-1598033129183-c4f50c736f10?q=80&w=600&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=600&auto=format&fit=crop',
@@ -93,14 +93,18 @@ const OutfitBuilder = {
 
   getSavedOutfits: function () {
     const saved = localStorage.getItem('editform_saved_outfits');
+    let list = PRESET_OUTFITS;
     if (saved) {
       try {
-        return JSON.parse(saved);
+        list = JSON.parse(saved);
       } catch (e) {
         console.error('Error parsing saved outfits', e);
       }
     }
-    return PRESET_OUTFITS;
+    return list.map(outfit => ({
+      ...outfit,
+      items: (outfit.items || []).filter(it => it !== 'Structured Leather Tote')
+    }));
   },
 
   saveOutfitsList: function (list) {
