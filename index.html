@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EDIT / FORM — Your Wardrobe. Your Style. Refined.</title>
+  <meta name="description" content="Discover your personal style, organize what you own, and create outfits that feel unmistakably yours with EDIT / FORM personal styling experience.">
+  <meta property="og:title" content="EDIT / FORM — Personalized Wardrobe & Style Guide">
+  <meta property="og:description" content="Luxury Personal Styling + Modern Wardrobe App + Editorial Fashion Experience.">
+  <meta property="og:type" content="website">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+
+  <!-- Theme Preload Script -->
+  <script src="assets/js/theme.js"></script>
+</head>
+<body>
+
+  <!-- =========================================================================
+       MANDATORY NAVBAR
+       ========================================================================= -->
+  <header class="header">
+    <div class="container navbar">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="EDIT / FORM Home">
+        EDIT <span class="divider">/</span> FORM
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link active">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="style-profile.html" class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+              My Style
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 9l6 6 6-6"/>
+              </svg>
+            </a>
+            <ul class="nav-dropdown" aria-label="My Style Submenu">
+              <li><a href="style-profile.html"><span>✦</span> Style Profile</a></li>
+              <li><a href="style-quiz.html"><span>✦</span> Style Quiz</a></li>
+              <li><a href="style-profile.html#color-palette"><span>✦</span> Color Preferences</a></li>
+              <li><a href="style-profile.html#silhouettes"><span>✦</span> Fit &amp; Silhouette</a></li>
+              <li><a href="style-profile.html#style-goals"><span>✦</span> Style Goals</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="wardrobe.html" class="nav-link">Wardrobe</a>
+          </li>
+          <li class="nav-item">
+            <a href="outfits.html" class="nav-link">Outfits</a>
+          </li>
+          <li class="nav-item">
+            <a href="style-guide.html" class="nav-link">Style Guide</a>
+          </li>
+          <li class="nav-item">
+            <a href="inspiration.html" class="nav-link">Inspiration</a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">About</a>
+          </li>
+        </ul>
+
+        <!-- Navigation Actions -->
+        <div class="nav-actions">
+          <!-- Theme Toggle Button -->
+          <button class="theme-toggle" id="theme-toggle-btn" aria-label="Toggle theme">
+            <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+
+          <!-- Auth Links -->
+          <a href="login.html" class="nav-link" style="font-weight: 600;">Login</a>
+          <a href="signup.html" class="nav-link" style="font-weight: 600;">Sign Up</a>
+
+          <!-- Primary Mandatory CTA -->
+          <a href="style-quiz.html" class="btn btn-primary btn-sm">Build My Style</a>
+        </div>
+      </nav>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="hamburger" id="hamburger-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Backdrop -->
+  <div class="mobile-nav-backdrop" id="mobile-backdrop"></div>
+
+  <!-- Mobile Drawer Menu -->
+  <aside class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+    <div>
+      <div class="mobile-nav-header">
+        <a href="index.html" class="brand-logo">EDIT <span class="divider">/</span> FORM</a>
+        <button class="btn-icon" id="mobile-close-btn" aria-label="Close menu">✕</button>
+      </div>
+
+      <ul class="mobile-nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li>
+          <button class="mobile-dropdown-btn">
+            My Style
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+          </button>
+          <ul class="mobile-submenu">
+            <li><a href="style-profile.html">✦ Style Profile</a></li>
+            <li><a href="style-quiz.html">✦ Style Quiz</a></li>
+            <li><a href="style-profile.html#color-palette">✦ Color Preferences</a></li>
+            <li><a href="style-profile.html#silhouettes">✦ Fit &amp; Silhouette</a></li>
+            <li><a href="style-profile.html#style-goals">✦ Style Goals</a></li>
+          </ul>
+        </li>
+        <li><a href="wardrobe.html">Wardrobe</a></li>
+        <li><a href="outfits.html">Outfits</a></li>
+        <li><a href="style-guide.html">Style Guide</a></li>
+        <li><a href="inspiration.html">Inspiration</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="mobile-actions">
+      <div class="flex-between items-center" style="margin-bottom: 0.8rem;">
+        <span style="font-size: 0.9rem; font-weight: 500;">Appearance</span>
+        <button class="theme-toggle" aria-label="Toggle theme">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+      <a href="login.html" class="btn btn-secondary" style="width: 100%;">Login</a>
+      <a href="style-quiz.html" class="btn btn-primary" style="width: 100%;">Build My Style</a>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       HERO SECTION WITH FLOATING INTERACTIVE STYLE CARD
+       ========================================================================= -->
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <!-- Hero Content -->
+        <div class="hero-content">
+          <span class="eyebrow">Personalized Styling Experience</span>
+          <h1>Your Wardrobe, Styled Around You.</h1>
+          <p class="text-lead">
+            Discover your personal style, organize what you own, and create outfits that feel unmistakably yours.
+          </p>
+
+          <div class="hero-actions">
+            <a href="style-quiz.html" class="btn btn-primary btn-lg">Build My Style</a>
+            <a href="#how-it-works" class="btn btn-secondary btn-lg">Explore the Experience</a>
+          </div>
+
+          <!-- Editorial Metrics -->
+          <div class="hero-stats">
+            <div class="hero-stat-item">
+              <div class="stat-value">100%</div>
+              <div class="stat-label">Personalized</div>
+            </div>
+            <div class="hero-stat-item">
+              <div class="stat-value">4 Archetypes</div>
+              <div class="stat-label">Refined Formulas</div>
+            </div>
+            <div class="hero-stat-item">
+              <div class="stat-value">Zero Waste</div>
+              <div class="stat-label">Wardrobe First</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual Composition with Floating Card -->
+        <div class="hero-visual">
+          <div class="hero-image-stack">
+            <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1000&auto=format&fit=crop" 
+                 alt="Curated neutral fashion editorial wardrobe" 
+                 loading="eager" />
+          </div>
+
+          <!-- Floating Personalized Profile Preview -->
+          <div class="floating-style-card">
+            <div class="card-tag">YOUR STYLE IDENTITY</div>
+            <h3 class="style-title">Modern Minimal</h3>
+
+            <div class="style-details">
+              <div class="style-row">
+                <span>Palette</span>
+                <span>Black · Cream · Taupe · Olive</span>
+              </div>
+              <div class="style-row">
+                <span>Silhouettes</span>
+                <span>Relaxed · Tailored</span>
+              </div>
+              <div class="style-row">
+                <span>Occasions</span>
+                <span>Work · Weekend · Dinner</span>
+              </div>
+            </div>
+
+            <a href="style-profile.html" class="btn btn-primary btn-sm" style="width: 100%;">
+              Refine My Style →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION — HOW IT WORKS (4-Step Visual Journey)
+         ========================================================================= -->
+    <section class="section section-alt" id="how-it-works">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="eyebrow">The Editorial Method</span>
+          <h2>How EDIT / FORM Refines Your Style</h2>
+          <p class="text-lead">
+            A thoughtful, wardrobe-first approach to intentional dressing and effortless combinations.
+          </p>
+        </div>
+
+        <div class="steps-grid">
+          <!-- Step 01 -->
+          <div class="step-card">
+            <div class="step-number">01</div>
+            <h3>Discover Your Style</h3>
+            <p>Answer a short visual style quiz to reveal your authentic aesthetic archetype, natural color harmony, and silhouette preferences.</p>
+          </div>
+
+          <!-- Step 02 -->
+          <div class="step-card">
+            <div class="step-number">02</div>
+            <h3>Build Your Wardrobe</h3>
+            <p>Digitize and categorize the pieces you already own. Track fabric, cuts, colors, and seasonal versatility in one clean space.</p>
+          </div>
+
+          <!-- Step 03 -->
+          <div class="step-card">
+            <div class="step-number">03</div>
+            <h3>Get Personalized Ideas</h3>
+            <p>Generate high-low outfit combinations and layered formulas tailored precisely to your weekly occasions.</p>
+          </div>
+
+          <!-- Step 04 -->
+          <div class="step-card">
+            <div class="step-number">04</div>
+            <h3>Create Your Style Guide</h3>
+            <p>Save your curated color palette, core essential checklist, signature silhouettes, and styling rules into an exportable personal guide.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION — STYLE QUIZ INTERACTIVE PREVIEW
+         ========================================================================= -->
+    <section class="section">
+      <div class="container container-narrow">
+        <div class="section-header text-center">
+          <span class="eyebrow">Interactive Discovery</span>
+          <h2>Which look feels most like you?</h2>
+          <p class="text-lead">Select your natural aesthetic to sample our personalization engine.</p>
+        </div>
+
+        <div class="card card-glass" style="padding: clamp(1.8rem, 4vw, 2.8rem);">
+          <div class="flex-between items-center" style="margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border-subtle);">
+            <span class="font-mono text-muted" style="font-size: 0.85rem;">PREVIEW QUESTION</span>
+            <span class="badge badge-gold">02 / 08</span>
+          </div>
+
+          <div class="grid grid-4 gap-md" id="home-quiz-preview-grid">
+            <div class="quiz-option-card selected" data-preview-val="minimal">
+              <div class="selected-check">✓</div>
+              <img class="option-img" src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=600&auto=format&fit=crop" alt="Minimal look" />
+              <div class="option-content">
+                <h4 class="option-label">Minimal</h4>
+                <p class="option-desc">Clean lines &amp; understated elegance.</p>
+              </div>
+            </div>
+
+            <div class="quiz-option-card" data-preview-val="classic">
+              <div class="selected-check">✓</div>
+              <img class="option-img" src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=600&auto=format&fit=crop" alt="Classic look" />
+              <div class="option-content">
+                <h4 class="option-label">Classic</h4>
+                <p class="option-desc">Structured tailoring &amp; heritage codes.</p>
+              </div>
+            </div>
+
+            <div class="quiz-option-card" data-preview-val="relaxed">
+              <div class="selected-check">✓</div>
+              <img class="option-img" src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=600&auto=format&fit=crop" alt="Relaxed look" />
+              <div class="option-content">
+                <h4 class="option-label">Relaxed</h4>
+                <p class="option-desc">Soft fluid drapes &amp; tactile knits.</p>
+              </div>
+            </div>
+
+            <div class="quiz-option-card" data-preview-val="statement">
+              <div class="selected-check">✓</div>
+              <img class="option-img" src="https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?q=80&w=600&auto=format&fit=crop" alt="Statement look" />
+              <div class="option-content">
+                <h4 class="option-label">Statement</h4>
+                <p class="option-desc">High-low contrast &amp; modern edge.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex-between items-center" style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle);">
+            <span style="font-size: 0.88rem; color: var(--text-muted);">Step 2 of 8 in Style Engine</span>
+            <a href="style-quiz.html" class="btn btn-primary">Continue Full Style Quiz →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION — WARDROBE PREVIEW
+         ========================================================================= -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="flex-between items-center" style="margin-bottom: 2.5rem; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <span class="eyebrow">Digital Closet</span>
+            <h2>Curated Wardrobe Collection</h2>
+          </div>
+          <a href="wardrobe.html" class="btn btn-secondary">View Full Wardrobe →</a>
+        </div>
+
+        <div class="wardrobe-grid" id="home-wardrobe-grid">
+          <!-- Card 1 -->
+          <div class="wardrobe-card">
+            <div class="item-thumb">
+              <img src="https://images.unsplash.com/photo-1598033129183-c4f50c736f10?q=80&w=800&auto=format&fit=crop" alt="Relaxed Silk Linen Shirt" />
+            </div>
+            <div class="item-details">
+              <div>
+                <span class="item-meta">Tops · Ivory</span>
+                <h4 class="item-title">Relaxed Silk Linen Shirt</h4>
+                <div class="item-tags">
+                  <span class="badge">Minimal</span>
+                  <span class="badge">Work</span>
+                </div>
+              </div>
+              <div class="item-footer-action">
+                <span style="font-size: 0.8rem; color: var(--text-muted);">Core Essential</span>
+                <a href="outfits.html" class="btn btn-sm btn-ghost">Use in Outfit →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="wardrobe-card">
+            <div class="item-thumb">
+              <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=800&auto=format&fit=crop" alt="High-Waist Tailored Trousers" />
+            </div>
+            <div class="item-details">
+              <div>
+                <span class="item-meta">Bottoms · Espresso</span>
+                <h4 class="item-title">High-Waist Tailored Trousers</h4>
+                <div class="item-tags">
+                  <span class="badge">Tailored</span>
+                  <span class="badge">Work</span>
+                </div>
+              </div>
+              <div class="item-footer-action">
+                <span style="font-size: 0.8rem; color: var(--text-muted);">Core Essential</span>
+                <a href="outfits.html" class="btn btn-sm btn-ghost">Use in Outfit →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="wardrobe-card">
+            <div class="item-thumb">
+              <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?q=80&w=800&auto=format&fit=crop" alt="Double-Breasted Wool Blazer" />
+            </div>
+            <div class="item-details">
+              <div>
+                <span class="item-meta">Outerwear · Oatmeal</span>
+                <h4 class="item-title">Double-Breasted Wool Blazer</h4>
+                <div class="item-tags">
+                  <span class="badge">Classic</span>
+                  <span class="badge">Work</span>
+                </div>
+              </div>
+              <div class="item-footer-action">
+                <span style="font-size: 0.8rem; color: var(--text-muted);">Structured</span>
+                <a href="outfits.html" class="btn btn-sm btn-ghost">Use in Outfit →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="wardrobe-card">
+            <div class="item-thumb">
+              <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=800&auto=format&fit=crop" alt="Point-Toe Leather Ankle Boots" />
+            </div>
+            <div class="item-details">
+              <div>
+                <span class="item-meta">Shoes · Black</span>
+                <h4 class="item-title">Point-Toe Leather Ankle Boots</h4>
+                <div class="item-tags">
+                  <span class="badge">Modern</span>
+                  <span class="badge">Dinner</span>
+                </div>
+              </div>
+              <div class="item-footer-action">
+                <span style="font-size: 0.8rem; color: var(--text-muted);">Calfskin</span>
+                <a href="outfits.html" class="btn btn-sm btn-ghost">Use in Outfit →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center" style="margin-top: 3rem;">
+          <a href="wardrobe.html" class="btn btn-primary btn-lg">View My Wardrobe</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION — OUTFIT BUILDER SHOWCASE
+         ========================================================================= -->
+    <section class="section">
+      <div class="container">
+        <div class="outfit-builder-layout">
+          <div>
+            <span class="eyebrow">Composition Tool</span>
+            <h2>Interactive Outfit Formulas</h2>
+            <p class="text-lead" style="margin-bottom: 2rem;">
+              Combine wardrobe pieces seamlessly. Test proportions, layers, and color contrasts on a live visual canvas.
+            </p>
+
+            <div class="card" style="padding: 1.8rem; margin-bottom: 1.5rem;">
+              <h4 style="margin-bottom: 0.8rem;">Current Composition: The Architectural Workday</h4>
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem;">
+                <li style="display: flex; gap: 0.6rem; font-size: 0.9rem;">
+                  <strong style="color: var(--accent-taupe); width: 85px;">Top:</strong> Relaxed Silk Linen Shirt (Ivory)
+                </li>
+                <li style="display: flex; gap: 0.6rem; font-size: 0.9rem;">
+                  <strong style="color: var(--accent-taupe); width: 85px;">Bottom:</strong> High-Waist Tailored Trousers (Espresso)
+                </li>
+                <li style="display: flex; gap: 0.6rem; font-size: 0.9rem;">
+                  <strong style="color: var(--accent-taupe); width: 85px;">Outerwear:</strong> Double-Breasted Wool Blazer (Oatmeal)
+                </li>
+                <li style="display: flex; gap: 0.6rem; font-size: 0.9rem;">
+                  <strong style="color: var(--accent-taupe); width: 85px;">Shoes:</strong> Point-Toe Leather Ankle Boots (Black)
+                </li>
+              </ul>
+
+              <div class="flex gap-sm" style="flex-wrap: wrap;">
+                <a href="outfits.html" class="btn btn-primary btn-sm">Open Outfit Builder</a>
+                <a href="outfits.html#saved" class="btn btn-secondary btn-sm">View Saved Outfits</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Editorial Outfit Composition Quad -->
+          <div class="card" style="padding: 1.2rem; background: var(--bg-surface-elevated);">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; border-radius: var(--radius-md); overflow: hidden;">
+              <img src="https://images.unsplash.com/photo-1598033129183-c4f50c736f10?q=80&w=500&auto=format&fit=crop" alt="Top piece" style="aspect-ratio: 1/1;" />
+              <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=500&auto=format&fit=crop" alt="Bottom piece" style="aspect-ratio: 1/1;" />
+              <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?q=80&w=500&auto=format&fit=crop" alt="Blazer piece" style="aspect-ratio: 1/1;" />
+              <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=500&auto=format&fit=crop" alt="Boots piece" style="aspect-ratio: 1/1;" />
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; padding: 0 0.5rem;">
+              <span class="badge badge-gold">Look 01 · Harmonized</span>
+              <span class="font-mono text-muted" style="font-size: 0.78rem;">4 Pieces Combined</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION — PERSONALIZED STYLE GUIDE PREVIEW
+         ========================================================================= -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="eyebrow">Personal Blueprint</span>
+          <h2>Your Style Guide Preview</h2>
+          <p class="text-lead">
+            An exportable style dossier defining your authentic color palette, essential pieces, and tailoring rules.
+          </p>
+        </div>
+
+        <div class="card card-glass" style="max-width: 960px; margin: 0 auto; padding: clamp(2rem, 5vw, 3.5rem);">
+          <div class="flex-between items-center" style="border-bottom: 1px solid var(--border-subtle); padding-bottom: 1.5rem; margin-bottom: 2rem;">
+            <div>
+              <span class="eyebrow" style="margin-bottom: 0.2rem;">STYLE IDENTITY</span>
+              <h3 style="font-size: 2.2rem;">Modern Minimal</h3>
+            </div>
+            <span class="badge badge-olive">Capsule Ready</span>
+          </div>
+
+          <div class="grid grid-3 gap-lg">
+            <!-- Palette Preview -->
+            <div>
+              <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem;">Color Palette</h4>
+              <div class="swatch-group">
+                <span class="color-swatch" style="background-color: #121110;" data-tooltip="Pitch Black"></span>
+                <span class="color-swatch" style="background-color: #F7F3EB;" data-tooltip="Warm Ivory"></span>
+                <span class="color-swatch" style="background-color: #A89E93;" data-tooltip="Oatmeal Taupe"></span>
+                <span class="color-swatch" style="background-color: #586250;" data-tooltip="Muted Olive"></span>
+                <span class="color-swatch" style="background-color: #2A2421;" data-tooltip="Espresso"></span>
+              </div>
+              <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.8rem;">
+                Neutral base with muted olive accents for organic depth.
+              </p>
+            </div>
+
+            <!-- Key Silhouettes -->
+            <div>
+              <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem;">Key Silhouettes</h4>
+              <ul style="list-style: none; font-size: 0.88rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.4rem;">
+                <li>✦ Relaxed Tailoring</li>
+                <li>✦ Clean Unbroken Verticals</li>
+                <li>✦ High-Rise Straight Trouser</li>
+                <li>✦ Structured Geometric Coats</li>
+              </ul>
+            </div>
+
+            <!-- Wardrobe Essentials -->
+            <div>
+              <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem;">Core Essentials</h4>
+              <ul style="list-style: none; font-size: 0.88rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.4rem;">
+                <li>✦ Crisp Poplin Shirt</li>
+                <li>✦ Tailored Trousers</li>
+                <li>✦ Minimalist Sneakers</li>
+                <li>✦ Structured Leather Tote</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="text-center" style="margin-top: 2.5rem; padding-top: 1.8rem; border-top: 1px solid var(--border-subtle);">
+            <a href="style-guide.html" class="btn btn-primary btn-lg">View My Complete Style Guide</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION — STYLE INSPIRATION (Editorial Lookbook)
+         ========================================================================= -->
+    <section class="section">
+      <div class="container">
+        <div class="flex-between items-center" style="margin-bottom: 2.5rem; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <span class="eyebrow">Editorial Lookbook</span>
+            <h2>Refined Style Inspiration</h2>
+          </div>
+          <a href="inspiration.html" class="btn btn-secondary">Explore All Looks →</a>
+        </div>
+
+        <div class="grid grid-3 gap-lg">
+          <!-- Look 1 -->
+          <div class="card card-editorial">
+            <div class="card-image-wrap">
+              <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=800&auto=format&fit=crop" alt="Workwear look inspiration" />
+            </div>
+            <div class="card-body">
+              <div class="flex-between items-center" style="margin-bottom: 0.5rem;">
+                <span class="badge">Workwear</span>
+                <span class="font-mono text-muted" style="font-size: 0.75rem;">Tailored</span>
+              </div>
+              <h4 style="font-size: 1.2rem; margin-bottom: 0.4rem;">The Structured Executive</h4>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+                Monochromatic palette elevated with sharp lapels and calfskin leather.
+              </p>
+              <a href="inspiration.html" class="btn btn-sm btn-secondary" style="width: 100%;">Use This Look</a>
+            </div>
+          </div>
+
+          <!-- Look 2 -->
+          <div class="card card-editorial">
+            <div class="card-image-wrap">
+              <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=800&auto=format&fit=crop" alt="Weekend leisure inspiration" />
+            </div>
+            <div class="card-body">
+              <div class="flex-between items-center" style="margin-bottom: 0.5rem;">
+                <span class="badge">Weekend</span>
+                <span class="font-mono text-muted" style="font-size: 0.75rem;">Relaxed</span>
+              </div>
+              <h4 style="font-size: 1.2rem; margin-bottom: 0.4rem;">Organic Linen Ease</h4>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+                Tactile warm taupe and unlined draped outerwear for off-duty days.
+              </p>
+              <a href="inspiration.html" class="btn btn-sm btn-secondary" style="width: 100%;">Use This Look</a>
+            </div>
+          </div>
+
+          <!-- Look 3 -->
+          <div class="card card-editorial">
+            <div class="card-image-wrap">
+              <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=800&auto=format&fit=crop" alt="Evening dinner inspiration" />
+            </div>
+            <div class="card-body">
+              <div class="flex-between items-center" style="margin-bottom: 0.5rem;">
+                <span class="badge">Evening</span>
+                <span class="font-mono text-muted" style="font-size: 0.75rem;">Editorial</span>
+              </div>
+              <h4 style="font-size: 1.2rem; margin-bottom: 0.4rem;">Midnight Drape &amp; Gold</h4>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+                Fluid silk contrast framed by deep espresso outerwear and sculptural accents.
+              </p>
+              <a href="inspiration.html" class="btn btn-sm btn-secondary" style="width: 100%;">Use This Look</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         FINAL CTA SECTION
+         ========================================================================= -->
+    <section class="section section-alt" style="text-align: center;">
+      <div class="container container-slim">
+        <span class="eyebrow">Start Your Refinement</span>
+        <h2 style="margin-bottom: 1.2rem;">Get Dressed With More Intention.</h2>
+        <p class="text-lead" style="margin-bottom: 2.2rem;">
+          Build a wardrobe that works together, reflects your style, and makes getting dressed easier.
+        </p>
+        <div class="flex-center gap-md" style="flex-wrap: wrap;">
+          <a href="style-quiz.html" class="btn btn-primary btn-lg">Build My Style</a>
+          <a href="wardrobe.html" class="btn btn-secondary btn-lg">Explore Wardrobe Tools</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       MANDATORY 4-COLUMN FOOTER
+       ========================================================================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Column 1: Brand & Tagline -->
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">EDIT <span class="divider">/</span> FORM</a>
+          <p class="footer-tagline">Your Wardrobe. Your Style. Refined.</p>
+          <div class="footer-social-links">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="btn-icon" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" class="btn-icon" aria-label="Pinterest">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="8" x2="12" y2="16"></line>
+                <line x1="8" y1="12" x2="16" y2="12"></line>
+                <circle cx="12" cy="12" r="10"></circle>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Style Navigation -->
+        <div>
+          <h4 class="footer-title">STYLE</h4>
+          <ul class="footer-links">
+            <li><a href="style-profile.html">My Style</a></li>
+            <li><a href="wardrobe.html">Wardrobe</a></li>
+            <li><a href="outfits.html">Outfits</a></li>
+            <li><a href="style-guide.html">Style Guide</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Explore Navigation -->
+        <div>
+          <h4 class="footer-title">EXPLORE</h4>
+          <ul class="footer-links">
+            <li><a href="inspiration.html">Inspiration</a></li>
+            <li><a href="style-quiz.html">Style Quiz</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Support Navigation -->
+        <div>
+          <h4 class="footer-title">SUPPORT</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Help</a></li>
+            <li><a href="about.html#privacy">Privacy</a></li>
+            <li><a href="about.html#terms">Terms</a></li>
+            <li><a href="about.html#accessibility">Accessibility</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div>&copy; 2026 EDIT / FORM. All rights reserved.</div>
+        <div class="flex gap-md">
+          <a href="about.html" style="color: var(--text-muted);">Personal Styling Web App</a>
+          <span style="color: var(--border-medium);">·</span>
+          <a href="coming-soon.html" style="color: var(--text-muted);">VIP Stylist Beta</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Core Scripts -->
+  <script src="assets/js/recommendations.js"></script>
+  <script src="assets/js/wardrobe.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <!-- Homepage Interactive Preview Script -->
+  <script>
+    document.querySelectorAll('#home-quiz-preview-grid .quiz-option-card').forEach(card => {
+      card.addEventListener('click', () => {
+        document.querySelectorAll('#home-quiz-preview-grid .quiz-option-card').forEach(c => c.classList.remove('selected'));
+        card.classList.add('selected');
+        const val = card.getAttribute('data-preview-val');
+        if (window.showToast) {
+          window.showToast(`Selected "${card.querySelector('.option-label').textContent}". Continue quiz for full profile.`, 'info');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

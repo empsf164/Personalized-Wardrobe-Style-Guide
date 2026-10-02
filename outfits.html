@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Outfit Ideas &amp; Outfit Builder — EDIT / FORM</title>
+  <meta name="description" content="Plan and assemble outfit combinations using our interactive visual outfit builder and curated editorial looks.">
+  <meta property="og:title" content="Outfit Ideas &amp; Outfit Builder — EDIT / FORM">
+  <meta property="og:description" content="Create harmonized outfit formulas from your digital wardrobe pieces.">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+
+  <!-- Theme Preload Script -->
+  <script src="assets/js/theme.js"></script>
+</head>
+<body>
+
+  <!-- =========================================================================
+       MANDATORY NAVBAR
+       ========================================================================= -->
+  <header class="header">
+    <div class="container navbar">
+      <a href="index.html" class="brand-logo" aria-label="EDIT / FORM Home">
+        EDIT <span class="divider">/</span> FORM
+      </a>
+
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item">
+            <a href="style-profile.html" class="nav-link dropdown-toggle" aria-expanded="false">
+              My Style
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+            <ul class="nav-dropdown">
+              <li><a href="style-profile.html"><span>✦</span> Style Profile</a></li>
+              <li><a href="style-quiz.html"><span>✦</span> Style Quiz</a></li>
+              <li><a href="style-profile.html#color-palette"><span>✦</span> Color Preferences</a></li>
+              <li><a href="style-profile.html#silhouettes"><span>✦</span> Fit &amp; Silhouette</a></li>
+              <li><a href="style-profile.html#style-goals"><span>✦</span> Style Goals</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a href="wardrobe.html" class="nav-link">Wardrobe</a></li>
+          <li class="nav-item"><a href="outfits.html" class="nav-link active">Outfits</a></li>
+          <li class="nav-item"><a href="style-guide.html" class="nav-link">Style Guide</a></li>
+          <li class="nav-item"><a href="inspiration.html" class="nav-link">Inspiration</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="theme-toggle" id="theme-toggle-btn" aria-label="Toggle theme">
+            <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+          <a href="login.html" class="nav-link" style="font-weight: 600;">Login</a>
+          <a href="signup.html" class="nav-link" style="font-weight: 600;">Sign Up</a>
+          <a href="style-quiz.html" class="btn btn-primary btn-sm">Build My Style</a>
+        </div>
+      </nav>
+
+      <button class="hamburger" id="hamburger-btn" aria-label="Toggle mobile menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-backdrop" id="mobile-backdrop"></div>
+  <aside class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+    <div>
+      <div class="mobile-nav-header">
+        <a href="index.html" class="brand-logo">EDIT <span class="divider">/</span> FORM</a>
+        <button class="btn-icon" id="mobile-close-btn" aria-label="Close menu">✕</button>
+      </div>
+      <ul class="mobile-nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li>
+          <button class="mobile-dropdown-btn">My Style <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="mobile-submenu">
+            <li><a href="style-profile.html">✦ Style Profile</a></li>
+            <li><a href="style-quiz.html">✦ Style Quiz</a></li>
+            <li><a href="style-profile.html#color-palette">✦ Color Preferences</a></li>
+            <li><a href="style-profile.html#silhouettes">✦ Fit &amp; Silhouette</a></li>
+            <li><a href="style-profile.html#style-goals">✦ Style Goals</a></li>
+          </ul>
+        </li>
+        <li><a href="wardrobe.html">Wardrobe</a></li>
+        <li><a href="outfits.html" class="active">Outfits</a></li>
+        <li><a href="style-guide.html">Style Guide</a></li>
+        <li><a href="inspiration.html">Inspiration</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="mobile-actions">
+      <a href="login.html" class="btn btn-secondary" style="width: 100%;">Login</a>
+      <a href="style-quiz.html" class="btn btn-primary" style="width: 100%;">Build My Style</a>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       SECTION 1: INTERACTIVE LIVE OUTFIT BUILDER
+       ========================================================================= -->
+  <main class="section">
+    <div class="container">
+      
+      <!-- Top Title -->
+      <div class="flex-between items-center" style="margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <span class="eyebrow">Composition Studio</span>
+          <h1 style="font-size: clamp(2.2rem, 4vw, 3.2rem);">Outfit Builder</h1>
+          <p class="text-lead" style="margin: 0;">Assemble, test, and save tailored outfit combinations from your pieces.</p>
+        </div>
+        <div class="flex gap-sm">
+          <button class="btn btn-secondary" onclick="OutfitBuilder.shuffleOutfit()">
+            ✦ Harmonized Shuffle
+          </button>
+          <button class="btn btn-primary" onclick="openModal('save-outfit-modal')">
+            Save Current Look
+          </button>
+        </div>
+      </div>
+
+      <!-- Builder Grid Layout -->
+      <div class="outfit-builder-layout" style="margin-bottom: 4rem;">
+        
+        <!-- Interactive Composition Slots -->
+        <div class="builder-canvas">
+          <div class="flex-between items-center" style="margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.8rem;">
+            <div>
+              <h3 style="font-size: 1.35rem;">Live Composition Canvas</h3>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">Click any slot to swap in a piece from your wardrobe.</p>
+            </div>
+            <button class="btn btn-ghost btn-sm" onclick="OutfitBuilder.clearAllSlots()">Clear All ✕</button>
+          </div>
+
+          <div class="canvas-slots-grid">
+            <!-- Slot 1: TOP -->
+            <div id="slot-top" class="outfit-slot" onclick="openSelectSlotModal('top')">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg>
+              <span class="slot-label">Select Top</span>
+            </div>
+
+            <!-- Slot 2: BOTTOM -->
+            <div id="slot-bottom" class="outfit-slot" onclick="openSelectSlotModal('bottom')">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg>
+              <span class="slot-label">Select Bottom</span>
+            </div>
+
+            <!-- Slot 3: SHOES -->
+            <div id="slot-shoes" class="outfit-slot" onclick="openSelectSlotModal('shoes')">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg>
+              <span class="slot-label">Select Shoes</span>
+            </div>
+
+            <!-- Slot 4: ACCESSORY -->
+            <div id="slot-accessory" class="outfit-slot" onclick="openSelectSlotModal('accessory')">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg>
+              <span class="slot-label">Select Accessory</span>
+            </div>
+          </div>
+
+          <!-- Optional Layer Slot -->
+          <div id="slot-layer" class="outfit-slot" style="min-height: 120px;" onclick="openSelectSlotModal('layer')">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg>
+            <span class="slot-label">Add Outerwear Layer (Optional)</span>
+          </div>
+        </div>
+
+        <!-- Right Side: Styling Proportions & Formula Guidance -->
+        <div class="card" style="padding: 2rem;">
+          <span class="eyebrow">Styling Formula Check</span>
+          <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Proportion &amp; Balance</h3>
+          
+          <div style="display: flex; flex-direction: column; gap: 1.2rem; margin-bottom: 2rem;">
+            <div class="card card-glass" style="padding: 1rem;">
+              <strong style="display: block; font-size: 0.95rem; margin-bottom: 0.2rem;">Rule of Proportions</strong>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">
+                If your bottom piece has generous fluid volume (wide-leg trousers), keep the top structured or neatly tucked.
+              </p>
+            </div>
+
+            <div class="card card-glass" style="padding: 1rem;">
+              <strong style="display: block; font-size: 0.95rem; margin-bottom: 0.2rem;">Color Anchor</strong>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">
+                Connect accessories to your shoe leather tone (espresso or black) to visually ground the palette.
+              </p>
+            </div>
+
+            <div class="card card-glass" style="padding: 1rem;">
+              <strong style="display: block; font-size: 0.95rem; margin-bottom: 0.2rem;">Layer Texture Contrast</strong>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">
+                Layer smooth poplin or silk under textured double-faced wool for editorial depth.
+              </p>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <button class="btn btn-primary" onclick="openModal('save-outfit-modal')" style="width: 100%;">
+              Save This Outfit Formula
+            </button>
+            <button class="btn btn-secondary" onclick="OutfitBuilder.shuffleOutfit()" style="width: 100%;">
+              Shuffle New Combination ↺
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- =====================================================================
+           SECTION 2: OUTFIT IDEAS & SAVED LOOKBOOK
+           ===================================================================== -->
+      <div id="saved" style="padding-top: 2rem;">
+        <div class="flex-between items-center" style="margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <span class="eyebrow">Curated Combinations</span>
+            <h2>Outfit Ideas &amp; Saved Looks</h2>
+          </div>
+
+          <!-- Occasion Filters -->
+          <div class="wardrobe-tabs" id="outfit-filters">
+            <button class="tab-btn active" data-filter="all">All Occasions</button>
+            <button class="tab-btn" data-filter="Work">Work</button>
+            <button class="tab-btn" data-filter="Weekend">Weekend</button>
+            <button class="tab-btn" data-filter="Dinner">Dinner</button>
+            <button class="tab-btn" data-filter="Travel">Travel</button>
+          </div>
+        </div>
+
+        <!-- Outfits Grid -->
+        <div class="grid grid-2 gap-xl" id="outfits-grid">
+          <!-- Rendered dynamically below -->
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       MODAL: SELECT WARDROBE PIECE FOR SLOT
+       ========================================================================= -->
+  <div class="modal-backdrop" id="select-slot-modal">
+    <div class="modal-content" style="max-width: 680px;">
+      <button class="modal-close-btn" onclick="closeModal('select-slot-modal')">✕</button>
+      <span class="eyebrow" id="slot-modal-eyebrow">Select Garment</span>
+      <h3 id="slot-modal-title" style="margin-bottom: 1.2rem;">Choose Piece for Outfit</h3>
+
+      <div class="grid grid-3 gap-md" id="slot-options-grid" style="max-height: 420px; overflow-y: auto; padding-right: 0.5rem;">
+        <!-- Filled dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MODAL: SAVE OUTFIT
+       ========================================================================= -->
+  <div class="modal-backdrop" id="save-outfit-modal">
+    <div class="modal-content">
+      <button class="modal-close-btn" onclick="closeModal('save-outfit-modal')">✕</button>
+      <span class="eyebrow">Archive Look</span>
+      <h3 style="margin-bottom: 1rem;">Save Outfit to My Library</h3>
+      
+      <form id="save-outfit-form">
+        <div class="form-group">
+          <label class="form-label" for="outfit-title-input">Outfit Title *</label>
+          <input type="text" class="form-control" id="outfit-title-input" placeholder="e.g. Gallery Dinner &amp; Tailored Trench" required />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="outfit-occasion-input">Occasion Tag</label>
+          <select class="form-control" id="outfit-occasion-input">
+            <option value="Work">Work / Studio</option>
+            <option value="Weekend">Weekend Leisure</option>
+            <option value="Dinner">Dinner &amp; Evening</option>
+            <option value="Travel">Transit &amp; Travel</option>
+            <option value="Everyday">Everyday</option>
+          </select>
+        </div>
+
+        <div class="flex gap-md" style="margin-top: 1.8rem;">
+          <button type="submit" class="btn btn-primary" style="flex: 1;">Save Look</button>
+          <button type="button" class="btn btn-secondary" onclick="closeModal('save-outfit-modal')">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       FOOTER
+       ========================================================================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">EDIT <span class="divider">/</span> FORM</a>
+          <p class="footer-tagline">Your Wardrobe. Your Style. Refined.</p>
+        </div>
+        <div>
+          <h4 class="footer-title">STYLE</h4>
+          <ul class="footer-links">
+            <li><a href="style-profile.html">My Style</a></li>
+            <li><a href="wardrobe.html">Wardrobe</a></li>
+            <li><a href="outfits.html">Outfits</a></li>
+            <li><a href="style-guide.html">Style Guide</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">EXPLORE</h4>
+          <ul class="footer-links">
+            <li><a href="inspiration.html">Inspiration</a></li>
+            <li><a href="style-quiz.html">Style Quiz</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">SUPPORT</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Help</a></li>
+            <li><a href="about.html#privacy">Privacy</a></li>
+            <li><a href="about.html#terms">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 EDIT / FORM. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/wardrobe.js"></script>
+  <script src="assets/js/outfit-builder.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    let currentSelectingSlot = null;
+    let activeOutfitOccasionFilter = 'all';
+
+    function openSelectSlotModal(slotKey) {
+      currentSelectingSlot = slotKey;
+      const modal = document.getElementById('select-slot-modal');
+      const title = document.getElementById('slot-modal-title');
+      const grid = document.getElementById('slot-options-grid');
+
+      let categoryTarget = 'tops';
+      if (slotKey === 'bottom') categoryTarget = 'bottoms';
+      if (slotKey === 'shoes') categoryTarget = 'shoes';
+      if (slotKey === 'accessory') categoryTarget = 'accessories';
+      if (slotKey === 'layer') categoryTarget = 'outerwear';
+
+      title.textContent = `Choose ${slotKey.toUpperCase()} from Wardrobe`;
+
+      const allItems = window.WardrobeManager.getItems();
+      const matchingItems = allItems.filter(i => {
+        if (slotKey === 'top') return i.category === 'tops' || i.category === 'dresses';
+        if (slotKey === 'bottom') return i.category === 'bottoms' || i.category === 'dresses';
+        if (slotKey === 'shoes') return i.category === 'shoes';
+        if (slotKey === 'accessory') return i.category === 'accessories';
+        if (slotKey === 'layer') return i.category === 'outerwear';
+        return true;
+      });
+
+      if (matchingItems.length === 0) {
+        grid.innerHTML = `<div style="grid-column: 1/-1; padding: 2rem; text-align: center; color: var(--text-muted);">No pieces in this category. Add garments in your Digital Wardrobe!</div>`;
+      } else {
+        grid.innerHTML = matchingItems.map(item => `
+          <div class="card card-editorial" style="cursor: pointer;" onclick="chooseItemForCurrentSlot('${item.id}')">
+            <div class="card-image-wrap" style="aspect-ratio: 1/1;">
+              <img src="${item.image}" alt="${item.name}" loading="lazy" />
+            </div>
+            <div style="padding: 0.8rem;">
+              <strong style="font-size: 0.85rem; display: block;">${item.name}</strong>
+              <span class="font-mono text-muted" style="font-size: 0.72rem;">${item.color}</span>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      openModal('select-slot-modal');
+    }
+
+    function chooseItemForCurrentSlot(itemId) {
+      const item = window.WardrobeManager.getItemById(itemId);
+      if (item && currentSelectingSlot) {
+        OutfitBuilder.setSlotItem(currentSelectingSlot, item);
+        closeModal('select-slot-modal');
+        if (window.showToast) {
+          window.showToast(`Selected "${item.name}" for ${currentSelectingSlot}`, 'info');
+        }
+      }
+    }
+
+    function renderOutfitsGrid() {
+      const outfits = OutfitBuilder.getSavedOutfits();
+      const grid = document.getElementById('outfits-grid');
+
+      const filtered = activeOutfitOccasionFilter === 'all' 
+        ? outfits 
+        : outfits.filter(o => o.occasion.toLowerCase() === activeOutfitOccasionFilter.toLowerCase());
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `<div class="card text-center" style="grid-column: 1/-1; padding: 3rem;">No outfits found for this occasion. Use the Outfit Builder above to compose one!</div>`;
+        return;
+      }
+
+      grid.innerHTML = filtered.map(outfit => `
+        <div class="outfit-card">
+          <div class="outfit-card-composition">
+            <img src="${outfit.images[0] || 'https://images.unsplash.com/photo-1598033129183-c4f50c736f10?q=80&w=400'}" alt="Piece 1" />
+            <img src="${outfit.images[1] || 'https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=400'}" alt="Piece 2" />
+            <img src="${outfit.images[2] || 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?q=80&w=400'}" alt="Piece 3" />
+            <img src="${outfit.images[3] || 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=400'}" alt="Piece 4" />
+          </div>
+          <div class="outfit-card-body">
+            <div class="flex-between items-center" style="margin-bottom: 0.6rem;">
+              <span class="badge badge-gold">${outfit.occasion}</span>
+              <span class="font-mono text-muted" style="font-size: 0.75rem;">${outfit.style}</span>
+            </div>
+            <h3 class="outfit-card-title">${outfit.title}</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">${outfit.notes || ''}</p>
+            
+            <ul class="outfit-card-items-list">
+              ${outfit.items.map(it => `<li>${it}</li>`).join('')}
+            </ul>
+
+            <div class="flex-between items-center" style="padding-top: 1rem; border-top: 1px dashed var(--border-subtle);">
+              <button class="btn btn-sm btn-primary" onclick="loadOutfitIntoBuilder('${outfit.id}')">
+                Load into Canvas
+              </button>
+              <button class="btn btn-sm btn-ghost" onclick="deleteSavedOutfitClick('${outfit.id}')" style="color: var(--text-muted);">
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function loadOutfitIntoBuilder(id) {
+      const outfit = OutfitBuilder.getSavedOutfits().find(o => o.id === id);
+      if (outfit) {
+        if (outfit.topId) OutfitBuilder.currentSlots.top = window.WardrobeManager.getItemById(outfit.topId);
+        if (outfit.bottomId) OutfitBuilder.currentSlots.bottom = window.WardrobeManager.getItemById(outfit.bottomId);
+        if (outfit.layerId) OutfitBuilder.currentSlots.layer = window.WardrobeManager.getItemById(outfit.layerId);
+        if (outfit.shoesId) OutfitBuilder.currentSlots.shoes = window.WardrobeManager.getItemById(outfit.shoesId);
+        if (outfit.accessoryId) OutfitBuilder.currentSlots.accessory = window.WardrobeManager.getItemById(outfit.accessoryId);
+        OutfitBuilder.renderCanvas();
+        window.scrollTo({ top: 120, behavior: 'smooth' });
+        if (window.showToast) window.showToast(`Loaded "${outfit.title}" onto canvas`, 'info');
+      }
+    }
+
+    function deleteSavedOutfitClick(id) {
+      if (confirm('Delete this saved outfit formula?')) {
+        OutfitBuilder.deleteSavedOutfit(id);
+        renderOutfitsGrid();
+        if (window.showToast) window.showToast('Outfit removed from saved library', 'info');
+      }
+    }
+
+    // Occasion Filters Click
+    document.querySelectorAll('#outfit-filters .tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('#outfit-filters .tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeOutfitOccasionFilter = btn.getAttribute('data-filter');
+        renderOutfitsGrid();
+      });
+    });
+
+    // Save Outfit Modal Form Submission
+    document.getElementById('save-outfit-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const title = document.getElementById('outfit-title-input').value;
+      const occasion = document.getElementById('outfit-occasion-input').value;
+
+      const created = OutfitBuilder.saveCurrentOutfit(title, occasion);
+      if (created) {
+        closeModal('save-outfit-modal');
+        e.target.reset();
+        renderOutfitsGrid();
+        if (window.showToast) window.showToast(`"${title}" saved to your outfits library!`, 'success');
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // Check if URL has item query param (e.g. ?item=w-1)
+      const urlParams = new URLSearchParams(window.location.search);
+      const itemId = urlParams.get('item');
+      if (itemId && window.WardrobeManager) {
+        const item = window.WardrobeManager.getItemById(itemId);
+        if (item) {
+          if (item.category === 'tops') OutfitBuilder.currentSlots.top = item;
+          else if (item.category === 'bottoms') OutfitBuilder.currentSlots.bottom = item;
+          else if (item.category === 'shoes') OutfitBuilder.currentSlots.shoes = item;
+          else if (item.category === 'accessories') OutfitBuilder.currentSlots.accessory = item;
+          else if (item.category === 'outerwear') OutfitBuilder.currentSlots.layer = item;
+          OutfitBuilder.renderCanvas();
+          if (window.showToast) window.showToast(`Loaded ${item.name} into outfit builder`, 'info');
+        }
+      } else {
+        // Preload default look
+        OutfitBuilder.shuffleOutfit();
+      }
+
+      renderOutfitsGrid();
+    });
+  </script>
+</body>
+</html>

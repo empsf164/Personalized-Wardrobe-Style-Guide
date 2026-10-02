@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Style Profile — EDIT / FORM</title>
+  <meta name="description" content="Your central personal styling profile: style identity, color palette swatches, silhouette breakdown, occasion distribution, and wardrobe goals.">
+  <meta property="og:title" content="Your Style Profile — EDIT / FORM">
+  <meta property="og:description" content="Personalized style traits, color swatches, and silhouette blueprint.">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+
+  <!-- Theme Preload Script -->
+  <script src="assets/js/theme.js"></script>
+</head>
+<body>
+
+  <!-- =========================================================================
+       MANDATORY NAVBAR
+       ========================================================================= -->
+  <header class="header">
+    <div class="container navbar">
+      <a href="index.html" class="brand-logo" aria-label="EDIT / FORM Home">
+        EDIT <span class="divider">/</span> FORM
+      </a>
+
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item">
+            <a href="style-profile.html" class="nav-link active dropdown-toggle" aria-expanded="false">
+              My Style
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+            <ul class="nav-dropdown">
+              <li><a href="style-profile.html"><span>✦</span> Style Profile</a></li>
+              <li><a href="style-quiz.html"><span>✦</span> Style Quiz</a></li>
+              <li><a href="style-profile.html#color-palette"><span>✦</span> Color Preferences</a></li>
+              <li><a href="style-profile.html#silhouettes"><span>✦</span> Fit &amp; Silhouette</a></li>
+              <li><a href="style-profile.html#style-goals"><span>✦</span> Style Goals</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a href="wardrobe.html" class="nav-link">Wardrobe</a></li>
+          <li class="nav-item"><a href="outfits.html" class="nav-link">Outfits</a></li>
+          <li class="nav-item"><a href="style-guide.html" class="nav-link">Style Guide</a></li>
+          <li class="nav-item"><a href="inspiration.html" class="nav-link">Inspiration</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="theme-toggle" id="theme-toggle-btn" aria-label="Toggle theme">
+            <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+          <a href="login.html" class="nav-link" style="font-weight: 600;">Login</a>
+          <a href="signup.html" class="nav-link" style="font-weight: 600;">Sign Up</a>
+          <a href="style-quiz.html" class="btn btn-primary btn-sm">Build My Style</a>
+        </div>
+      </nav>
+
+      <button class="hamburger" id="hamburger-btn" aria-label="Toggle mobile menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Backdrop & Drawer -->
+  <div class="mobile-nav-backdrop" id="mobile-backdrop"></div>
+  <aside class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+    <div>
+      <div class="mobile-nav-header">
+        <a href="index.html" class="brand-logo">EDIT <span class="divider">/</span> FORM</a>
+        <button class="btn-icon" id="mobile-close-btn" aria-label="Close menu">✕</button>
+      </div>
+      <ul class="mobile-nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li>
+          <button class="mobile-dropdown-btn">My Style <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="mobile-submenu is-open">
+            <li><a href="style-profile.html" class="active">✦ Style Profile</a></li>
+            <li><a href="style-quiz.html">✦ Style Quiz</a></li>
+            <li><a href="style-profile.html#color-palette">✦ Color Preferences</a></li>
+            <li><a href="style-profile.html#silhouettes">✦ Fit &amp; Silhouette</a></li>
+            <li><a href="style-profile.html#style-goals">✦ Style Goals</a></li>
+          </ul>
+        </li>
+        <li><a href="wardrobe.html">Wardrobe</a></li>
+        <li><a href="outfits.html">Outfits</a></li>
+        <li><a href="style-guide.html">Style Guide</a></li>
+        <li><a href="inspiration.html">Inspiration</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="mobile-actions">
+      <a href="login.html" class="btn btn-secondary" style="width: 100%;">Login</a>
+      <a href="style-quiz.html" class="btn btn-primary" style="width: 100%;">Build My Style</a>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       MAIN CONTENT: STYLE PROFILE EXPERIENCE
+       ========================================================================= -->
+  <main class="section">
+    <div class="container">
+      
+      <!-- Top Profile Identity Header -->
+      <div class="guide-hero-banner">
+        <div class="flex-between items-center" style="flex-wrap: wrap; gap: 1.5rem;">
+          <div>
+            <span class="eyebrow">Active Style Identity</span>
+            <h1 id="profile-name" style="font-size: clamp(2.4rem, 4.5vw, 3.8rem); margin-bottom: 0.6rem;">Modern Minimal</h1>
+            <p id="profile-tagline" class="text-lead" style="max-width: 680px; margin-bottom: 1.2rem;">
+              Refined restraint, clean proportions &amp; intentional simplicity.
+            </p>
+            <div id="profile-traits" class="flex gap-xs" style="flex-wrap: wrap;">
+              <span class="badge badge-gold">Minimal</span>
+              <span class="badge badge-gold">Refined</span>
+              <span class="badge badge-gold">Relaxed</span>
+              <span class="badge badge-gold">Practical</span>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+            <button class="btn btn-primary" onclick="openModal('refine-profile-modal')">
+              Refine My Profile ✎
+            </button>
+            <a href="style-quiz.html" class="btn btn-secondary">
+              Retake Style Quiz ↺
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Profile Grid -->
+      <div class="grid grid-12 gap-xl">
+        
+        <!-- Left 8-Col Section -->
+        <div style="grid-column: span 8 / span 8;">
+          
+          <!-- SECTION 1: COLOR PALETTE -->
+          <div class="card" id="color-palette" style="margin-bottom: 2rem;">
+            <div class="flex-between items-center" style="margin-bottom: 1.2rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.8rem;">
+              <div>
+                <span class="eyebrow" style="margin: 0;">Harmonized Foundation</span>
+                <h3>Your Signature Color Palette</h3>
+              </div>
+              <span class="font-mono text-muted" style="font-size: 0.78rem;">Click swatch to copy HEX</span>
+            </div>
+
+            <p style="margin-bottom: 1.5rem; color: var(--text-secondary); font-size: 0.92rem;">
+              Your palette is structured to ensure every top, bottom, and layer in your wardrobe pairs effortlessly without clashing.
+            </p>
+
+            <div class="grid grid-2 gap-md" id="profile-palette-grid">
+              <!-- Swatches generated dynamically or initialized with defaults -->
+              <div class="card card-glass flex items-center gap-md" style="padding: 1rem; cursor: pointer;" onclick="copyToClipboard('#121110', 'Pitch Black')">
+                <span style="width: 44px; height: 44px; border-radius: 50%; background-color: #121110; border: 2px solid var(--border-subtle); flex-shrink: 0;"></span>
+                <div>
+                  <h4 style="font-size: 1rem; margin-bottom: 0.15rem;">Pitch Black</h4>
+                  <span class="font-mono text-muted" style="font-size: 0.78rem;">#121110 · Anchor Base</span>
+                </div>
+              </div>
+
+              <div class="card card-glass flex items-center gap-md" style="padding: 1rem; cursor: pointer;" onclick="copyToClipboard('#F7F3EB', 'Warm Ivory')">
+                <span style="width: 44px; height: 44px; border-radius: 50%; background-color: #F7F3EB; border: 2px solid var(--border-medium); flex-shrink: 0;"></span>
+                <div>
+                  <h4 style="font-size: 1rem; margin-bottom: 0.15rem;">Warm Ivory</h4>
+                  <span class="font-mono text-muted" style="font-size: 0.78rem;">#F7F3EB · Primary Light</span>
+                </div>
+              </div>
+
+              <div class="card card-glass flex items-center gap-md" style="padding: 1rem; cursor: pointer;" onclick="copyToClipboard('#A89E93', 'Oatmeal Taupe')">
+                <span style="width: 44px; height: 44px; border-radius: 50%; background-color: #A89E93; border: 2px solid var(--border-subtle); flex-shrink: 0;"></span>
+                <div>
+                  <h4 style="font-size: 1rem; margin-bottom: 0.15rem;">Oatmeal Taupe</h4>
+                  <span class="font-mono text-muted" style="font-size: 0.78rem;">#A89E93 · Soft Midtone</span>
+                </div>
+              </div>
+
+              <div class="card card-glass flex items-center gap-md" style="padding: 1rem; cursor: pointer;" onclick="copyToClipboard('#586250', 'Muted Olive')">
+                <span style="width: 44px; height: 44px; border-radius: 50%; background-color: #586250; border: 2px solid var(--border-subtle); flex-shrink: 0;"></span>
+                <div>
+                  <h4 style="font-size: 1rem; margin-bottom: 0.15rem;">Muted Olive</h4>
+                  <span class="font-mono text-muted" style="font-size: 0.78rem;">#586250 · Earthy Accent</span>
+                </div>
+              </div>
+
+              <div class="card card-glass flex items-center gap-md" style="padding: 1rem; cursor: pointer;" onclick="copyToClipboard('#2A2421', 'Espresso')">
+                <span style="width: 44px; height: 44px; border-radius: 50%; background-color: #2A2421; border: 2px solid var(--border-subtle); flex-shrink: 0;"></span>
+                <div>
+                  <h4 style="font-size: 1rem; margin-bottom: 0.15rem;">Espresso</h4>
+                  <span class="font-mono text-muted" style="font-size: 0.78rem;">#2A2421 · Depth Contour</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 2: PREFERRED SILHOUETTES -->
+          <div class="card" id="silhouettes" style="margin-bottom: 2rem;">
+            <div class="flex-between items-center" style="margin-bottom: 1.2rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.8rem;">
+              <div>
+                <span class="eyebrow" style="margin: 0;">Proportions &amp; Cuts</span>
+                <h3>Your Recommended Silhouettes</h3>
+              </div>
+              <span class="badge badge-olive">Proportion Guide</span>
+            </div>
+
+            <div class="grid grid-2 gap-md" id="profile-silhouettes-grid">
+              <div class="card card-glass" style="padding: 1.2rem;">
+                <h4 style="margin-bottom: 0.3rem;">Relaxed Tailoring</h4>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">
+                  Dropped shoulders with fluid drape that moves freely without looking sloppy.
+                </p>
+              </div>
+
+              <div class="card card-glass" style="padding: 1.2rem;">
+                <h4 style="margin-bottom: 0.3rem;">Clean Unbroken Verticals</h4>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">
+                  Unfussy lines with hidden plackets and minimal visual seams.
+                </p>
+              </div>
+
+              <div class="card card-glass" style="padding: 1.2rem;">
+                <h4 style="margin-bottom: 0.3rem;">Straight Leg Trousers</h4>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">
+                  High-waisted cuts with front pleats and a gentle break over loafers or boots.
+                </p>
+              </div>
+
+              <div class="card card-glass" style="padding: 1.2rem;">
+                <h4 style="margin-bottom: 0.3rem;">Structured Outerwear</h4>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">
+                  Architectural double-breasted blazers and unlined trench coats that frame outfits.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 3: STYLE GOALS CHECKLIST -->
+          <div class="card" id="style-goals">
+            <div class="flex-between items-center" style="margin-bottom: 1.2rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.8rem;">
+              <div>
+                <span class="eyebrow" style="margin: 0;">Intentional Dressing</span>
+                <h3>Your Active Style Goals</h3>
+              </div>
+              <span class="font-mono text-muted" style="font-size: 0.78rem;">Saved locally</span>
+            </div>
+
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.4rem;">
+              Track the habits and wardrobe milestones you are cultivating this season.
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 0.9rem;" id="goals-list">
+              <label class="checkbox-label card card-glass" style="padding: 0.9rem 1.2rem;">
+                <input type="checkbox" checked onchange="toggleGoal(this, 'Build a capsule wardrobe of 25 core items')">
+                <span style="font-weight: 500;">Build a curated capsule wardrobe of 25 core items</span>
+              </label>
+
+              <label class="checkbox-label card card-glass" style="padding: 0.9rem 1.2rem;">
+                <input type="checkbox" checked onchange="toggleGoal(this, 'Dress with calm confidence every morning')">
+                <span style="font-weight: 500;">Dress with calm confidence without second-guessing</span>
+              </label>
+
+              <label class="checkbox-label card card-glass" style="padding: 0.9rem 1.2rem;">
+                <input type="checkbox" checked onchange="toggleGoal(this, 'Reduce morning decision fatigue')">
+                <span style="font-weight: 500;">Reduce morning decision fatigue with 4 signature formulas</span>
+              </label>
+
+              <label class="checkbox-label card card-glass" style="padding: 0.9rem 1.2rem;">
+                <input type="checkbox" checked onchange="toggleGoal(this, 'Maximize rotation of currently owned pieces')">
+                <span style="font-weight: 500;">Maximize rotation of currently owned pieces before buying new</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right 4-Col Sidebar -->
+        <div style="grid-column: span 4 / span 4;">
+          
+          <!-- Occasion Distribution -->
+          <div class="card" style="margin-bottom: 2rem;">
+            <span class="eyebrow">Lifestyle Balance</span>
+            <h3 style="font-size: 1.3rem; margin-bottom: 1.2rem;">Occasion Split</h3>
+            
+            <div style="display: flex; flex-direction: column; gap: 1.2rem;">
+              <div>
+                <div class="flex-between" style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.35rem;">
+                  <span>Work / Executive</span>
+                  <span>40%</span>
+                </div>
+                <div class="quiz-progress-bar" style="margin-bottom: 0;">
+                  <div class="quiz-progress-fill" style="width: 40%;"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex-between" style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.35rem;">
+                  <span>Weekend Leisure</span>
+                  <span>30%</span>
+                </div>
+                <div class="quiz-progress-bar" style="margin-bottom: 0;">
+                  <div class="quiz-progress-fill" style="width: 30%;"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex-between" style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.35rem;">
+                  <span>Dinner &amp; Events</span>
+                  <span>20%</span>
+                </div>
+                <div class="quiz-progress-bar" style="margin-bottom: 0;">
+                  <div class="quiz-progress-fill" style="width: 20%;"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex-between" style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.35rem;">
+                  <span>Travel &amp; Mobility</span>
+                  <span>10%</span>
+                </div>
+                <div class="quiz-progress-bar" style="margin-bottom: 0;">
+                  <div class="quiz-progress-fill" style="width: 10%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Wardrobe Versatility Card -->
+          <div class="card card-glass" style="margin-bottom: 2rem;">
+            <span class="eyebrow">Wardrobe Metrics</span>
+            <h3 style="font-size: 1.3rem; margin-bottom: 1.2rem;">Capsule Health</h3>
+
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+              <div class="flex-between items-center" style="border-bottom: 1px dashed var(--border-subtle); padding-bottom: 0.6rem;">
+                <span style="font-size: 0.88rem; color: var(--text-secondary);">Active Wardrobe Pieces</span>
+                <strong class="font-mono" id="metrics-pieces">12 Items</strong>
+              </div>
+              <div class="flex-between items-center" style="border-bottom: 1px dashed var(--border-subtle); padding-bottom: 0.6rem;">
+                <span style="font-size: 0.88rem; color: var(--text-secondary);">Combinations Unlocked</span>
+                <strong class="font-mono" style="color: var(--accent-gold);">48+ Looks</strong>
+              </div>
+              <div class="flex-between items-center" style="border-bottom: 1px dashed var(--border-subtle); padding-bottom: 0.6rem;">
+                <span style="font-size: 0.88rem; color: var(--text-secondary);">Color Versatility</span>
+                <strong class="font-mono">94% High</strong>
+              </div>
+            </div>
+
+            <div style="margin-top: 1.5rem;">
+              <a href="wardrobe.html" class="btn btn-secondary btn-sm" style="width: 100%;">
+                Manage Wardrobe Pieces →
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Actions -->
+          <div class="card">
+            <h4 style="font-size: 1.1rem; margin-bottom: 1rem;">Next Styling Steps</h4>
+            <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+              <a href="outfits.html" class="btn btn-primary btn-sm" style="width: 100%;">
+                Create New Outfit
+              </a>
+              <a href="style-guide.html" class="btn btn-secondary btn-sm" style="width: 100%;">
+                View Style Guide
+              </a>
+              <a href="inspiration.html" class="btn btn-ghost btn-sm" style="width: 100%;">
+                Browse Lookbook
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       REFINE PROFILE MODAL
+       ========================================================================= -->
+  <div class="modal-backdrop" id="refine-profile-modal">
+    <div class="modal-content">
+      <button class="modal-close-btn" onclick="closeModal('refine-profile-modal')">✕</button>
+      <span class="eyebrow">Personalization Settings</span>
+      <h3 style="margin-bottom: 1rem;">Refine Your Style Profile</h3>
+      <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
+        Switch your primary archetype or adjust your lifestyle occasion weightings.
+      </p>
+
+      <form id="refine-form">
+        <div class="form-group">
+          <label class="form-label">Select Style Archetype</label>
+          <select class="form-control" id="select-archetype">
+            <option value="modern-minimal">Modern Minimal (Refined restraint &amp; clean lines)</option>
+            <option value="architectural-classic">Architectural Classic (Timeless tailoring &amp; structure)</option>
+            <option value="relaxed-neutral">Relaxed Neutral (Fluid linen &amp; warm drape)</option>
+            <option value="elevated-casual">Elevated Casual (High-low dynamic pairings)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Primary Dressing Environment</label>
+          <select class="form-control" id="select-primary-occasion">
+            <option value="work">Executive / Studio Work</option>
+            <option value="casual">Casual / Weekend Leisure</option>
+            <option value="dinner">Evening / Social Dining</option>
+            <option value="travel">Travel &amp; Mobility</option>
+          </select>
+        </div>
+
+        <div class="flex gap-md" style="margin-top: 2rem;">
+          <button type="submit" class="btn btn-primary" style="flex: 1;">Save Profile Changes</button>
+          <button type="button" class="btn btn-secondary" onclick="closeModal('refine-profile-modal')">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       FOOTER
+       ========================================================================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">EDIT <span class="divider">/</span> FORM</a>
+          <p class="footer-tagline">Your Wardrobe. Your Style. Refined.</p>
+        </div>
+        <div>
+          <h4 class="footer-title">STYLE</h4>
+          <ul class="footer-links">
+            <li><a href="style-profile.html">My Style</a></li>
+            <li><a href="wardrobe.html">Wardrobe</a></li>
+            <li><a href="outfits.html">Outfits</a></li>
+            <li><a href="style-guide.html">Style Guide</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">EXPLORE</h4>
+          <ul class="footer-links">
+            <li><a href="inspiration.html">Inspiration</a></li>
+            <li><a href="style-quiz.html">Style Quiz</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">SUPPORT</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Help</a></li>
+            <li><a href="about.html#privacy">Privacy</a></li>
+            <li><a href="about.html#terms">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 EDIT / FORM. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/recommendations.js"></script>
+  <script src="assets/js/wardrobe.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    function loadActiveProfile() {
+      if (!window.RecommendationsEngine) return;
+      const profile = window.RecommendationsEngine.getStoredProfile();
+      
+      document.getElementById('profile-name').textContent = profile.name;
+      document.getElementById('profile-tagline').textContent = profile.tagline;
+
+      // Render traits
+      const traitsEl = document.getElementById('profile-traits');
+      if (traitsEl) {
+        traitsEl.innerHTML = profile.traits.map(t => `<span class="badge badge-gold">${t}</span>`).join('');
+      }
+
+      // Render palette
+      const palEl = document.getElementById('profile-palette-grid');
+      if (palEl) {
+        palEl.innerHTML = profile.palette.map(c => `
+          <div class="card card-glass flex items-center gap-md" style="padding: 1rem; cursor: pointer;" onclick="copyToClipboard('${c.hex}', '${c.name}')">
+            <span style="width: 44px; height: 44px; border-radius: 50%; background-color: ${c.hex}; border: 2px solid var(--border-medium); flex-shrink: 0;"></span>
+            <div>
+              <h4 style="font-size: 1rem; margin-bottom: 0.15rem;">${c.name}</h4>
+              <span class="font-mono text-muted" style="font-size: 0.78rem;">${c.hex} · ${c.note}</span>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      // Render Silhouettes
+      const silEl = document.getElementById('profile-silhouettes-grid');
+      if (silEl) {
+        silEl.innerHTML = profile.silhouettes.map(s => `
+          <div class="card card-glass" style="padding: 1.2rem;">
+            <h4 style="margin-bottom: 0.3rem;">${s.name}</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">${s.desc}</p>
+          </div>
+        `).join('');
+      }
+
+      const selectArch = document.getElementById('select-archetype');
+      if (selectArch) selectArch.value = profile.id;
+    }
+
+    function toggleGoal(checkbox, goalName) {
+      if (window.showToast) {
+        window.showToast(`Goal ${checkbox.checked ? 'activated' : 'completed'}: ${goalName}`, 'info');
+      }
+    }
+
+    document.getElementById('refine-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const arch = document.getElementById('select-archetype').value;
+      if (window.RecommendationsEngine) {
+        window.RecommendationsEngine.saveProfile(arch);
+        loadActiveProfile();
+        closeModal('refine-profile-modal');
+        if (window.showToast) {
+          window.showToast('Style profile updated successfully!', 'success');
+        }
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      loadActiveProfile();
+      if (window.WardrobeManager) {
+        const items = window.WardrobeManager.getItems();
+        const metricsEl = document.getElementById('metrics-pieces');
+        if (metricsEl) metricsEl.textContent = `${items.length} Items`;
+      }
+    });
+  </script>
+</body>
+</html>

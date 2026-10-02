@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editorial Style Inspiration — EDIT / FORM</title>
+  <meta name="description" content="Explore curated editorial lookbooks across minimal, classic, relaxed, workwear, weekend, and evening occasions to inspire your personal wardrobe.">
+  <meta property="og:title" content="Editorial Style Inspiration — EDIT / FORM">
+  <meta property="og:description" content="Discover refined editorial looks and translate them into your wardrobe.">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+
+  <!-- Theme Preload Script -->
+  <script src="assets/js/theme.js"></script>
+</head>
+<body>
+
+  <!-- =========================================================================
+       MANDATORY NAVBAR
+       ========================================================================= -->
+  <header class="header">
+    <div class="container navbar">
+      <a href="index.html" class="brand-logo" aria-label="EDIT / FORM Home">
+        EDIT <span class="divider">/</span> FORM
+      </a>
+
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item">
+            <a href="style-profile.html" class="nav-link dropdown-toggle" aria-expanded="false">
+              My Style
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+            <ul class="nav-dropdown">
+              <li><a href="style-profile.html"><span>✦</span> Style Profile</a></li>
+              <li><a href="style-quiz.html"><span>✦</span> Style Quiz</a></li>
+              <li><a href="style-profile.html#color-palette"><span>✦</span> Color Preferences</a></li>
+              <li><a href="style-profile.html#silhouettes"><span>✦</span> Fit &amp; Silhouette</a></li>
+              <li><a href="style-profile.html#style-goals"><span>✦</span> Style Goals</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a href="wardrobe.html" class="nav-link">Wardrobe</a></li>
+          <li class="nav-item"><a href="outfits.html" class="nav-link">Outfits</a></li>
+          <li class="nav-item"><a href="style-guide.html" class="nav-link">Style Guide</a></li>
+          <li class="nav-item"><a href="inspiration.html" class="nav-link active">Inspiration</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="theme-toggle" id="theme-toggle-btn" aria-label="Toggle theme">
+            <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+          <a href="login.html" class="nav-link" style="font-weight: 600;">Login</a>
+          <a href="signup.html" class="nav-link" style="font-weight: 600;">Sign Up</a>
+          <a href="style-quiz.html" class="btn btn-primary btn-sm">Build My Style</a>
+        </div>
+      </nav>
+
+      <button class="hamburger" id="hamburger-btn" aria-label="Toggle mobile menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-backdrop" id="mobile-backdrop"></div>
+  <aside class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+    <div>
+      <div class="mobile-nav-header">
+        <a href="index.html" class="brand-logo">EDIT <span class="divider">/</span> FORM</a>
+        <button class="btn-icon" id="mobile-close-btn" aria-label="Close menu">✕</button>
+      </div>
+      <ul class="mobile-nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li>
+          <button class="mobile-dropdown-btn">My Style <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="mobile-submenu">
+            <li><a href="style-profile.html">✦ Style Profile</a></li>
+            <li><a href="style-quiz.html">✦ Style Quiz</a></li>
+            <li><a href="style-profile.html#color-palette">✦ Color Preferences</a></li>
+            <li><a href="style-profile.html#silhouettes">✦ Fit &amp; Silhouette</a></li>
+            <li><a href="style-profile.html#style-goals">✦ Style Goals</a></li>
+          </ul>
+        </li>
+        <li><a href="wardrobe.html">Wardrobe</a></li>
+        <li><a href="outfits.html">Outfits</a></li>
+        <li><a href="style-guide.html">Style Guide</a></li>
+        <li><a href="inspiration.html" class="active">Inspiration</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="mobile-actions">
+      <a href="login.html" class="btn btn-secondary" style="width: 100%;">Login</a>
+      <a href="style-quiz.html" class="btn btn-primary" style="width: 100%;">Build My Style</a>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       MAIN CONTENT: EDITORIAL INSPIRATION
+       ========================================================================= -->
+  <main class="section">
+    <div class="container">
+      
+      <!-- Page Header -->
+      <div class="section-header">
+        <span class="eyebrow">Curated Lookbook</span>
+        <h1 style="font-size: clamp(2.3rem, 4vw, 3.4rem); margin-bottom: 0.5rem;">Editorial Style Inspiration</h1>
+        <p class="text-lead" style="max-width: 720px; margin-bottom: 1.5rem;">
+          High-fashion references curated for proportions, layering, and tactile natural textiles. Translate any look directly into your wardrobe.
+        </p>
+
+        <!-- Inspiration Category Filters -->
+        <div class="wardrobe-tabs" id="inspiration-tabs">
+          <button class="tab-btn active" data-filter="all">All Looks</button>
+          <button class="tab-btn" data-filter="minimal">Minimal</button>
+          <button class="tab-btn" data-filter="classic">Classic</button>
+          <button class="tab-btn" data-filter="relaxed">Relaxed</button>
+          <button class="tab-btn" data-filter="workwear">Workwear</button>
+          <button class="tab-btn" data-filter="weekend">Weekend</button>
+          <button class="tab-btn" data-filter="evening">Evening</button>
+        </div>
+      </div>
+
+      <!-- Inspiration Grid / Masonry -->
+      <div class="inspiration-masonry" id="inspiration-grid">
+        
+        <!-- Item 1 -->
+        <div class="inspiration-item" data-category="minimal workwear">
+          <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=800&auto=format&fit=crop" alt="The Structured Executive Look" loading="lazy" />
+          <div class="look-meta">
+            <div class="flex-between items-center" style="margin-bottom: 0.4rem;">
+              <span class="badge badge-gold">Workwear</span>
+              <span class="font-mono text-muted" style="font-size: 0.72rem;">Minimal</span>
+            </div>
+            <h4>The Monochromatic Studio Day</h4>
+            <div class="swatch-group" style="margin-bottom: 0.8rem;">
+              <span class="color-swatch" style="background-color: #121110; width: 20px; height: 20px;"></span>
+              <span class="color-swatch" style="background-color: #F7F3EB; width: 20px; height: 20px;"></span>
+              <span class="color-swatch" style="background-color: #A89E93; width: 20px; height: 20px;"></span>
+            </div>
+            <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1rem;">
+              Sharp poplin paired with straight-leg charcoal wool and clean leather accents.
+            </p>
+            <a href="outfits.html?item=w-1" class="btn btn-sm btn-primary" style="width: 100%;">Use This Look in Outfit Builder →</a>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="inspiration-item" data-category="relaxed weekend">
+          <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=800&auto=format&fit=crop" alt="Relaxed Neutral Look" loading="lazy" />
+          <div class="look-meta">
+            <div class="flex-between items-center" style="margin-bottom: 0.4rem;">
+              <span class="badge badge-olive">Weekend</span>
+              <span class="font-mono text-muted" style="font-size: 0.72rem;">Relaxed</span>
+            </div>
+            <h4>Organic Linen Sunday</h4>
+            <div class="swatch-group" style="margin-bottom: 0.8rem;">
+              <span class="color-swatch" style="background-color: #D6C7B2; width: 20px; height: 20px;"></span>
+              <span class="color-swatch" style="background-color: #EBE4D5; width: 20px; height: 20px;"></span>
+              <span class="color-swatch" style="background-color: #586250; width: 20px; height: 20px;"></span>
+            </div>
+            <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1rem;">
+              Tactile linen layered with soft knitwear and minimalist sneakers for relaxed errands.
+            </p>
+            <a href="outfits.html?item=w-9" class="btn btn-sm btn-primary" style="width: 100%;">Use This Look in Outfit Builder →</a>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="inspiration-item" data-category="classic workwear">
+          <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=800&auto=format&fit=crop" alt="Architectural Trench" loading="lazy" />
+          <div class="look-meta">
+            <div class="flex-between items-center" style="margin-bottom: 0.4rem;">
+              <span class="badge badge-gold">Classic</span>
+              <span class="font-mono text-muted" style="font-size: 0.72rem;">Workwear</span>
+            </div>
+            <h4>The Heritage Trench Coat</h4>
+            <div class="swatch-group" style="margin-bottom: 0.8rem;">
+              <span class="color-swatch" style="background-color: #C5A880; width: 20px; height: 20px;"></span>
+              <span class="color-swatch" style="background-color: #1A1D20; width: 20px; height: 20px;"></span>
+              <span class="color-swatch" style="background-color: #FFFFFF; width: 20px; height: 20px;"></span>
+            </div>
+            <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1rem;">
+              Double-breasted storm flap trench over crisp button-down and tailored loafers.
+            </p>
+            <a href="outfits.html?item=w-10" class="btn btn-sm btn-primary" style="width: 100%;">Use This Look in Outfit Builder →</a>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="inspiration-item" data-category="evening minimal">
+          <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=800&auto=format&fit=crop" alt="Silk Evening Drape" loading="lazy" />
+          <div class="look-meta">
+            <div class="flex-between items-center" style="margin-bottom: 0.4rem;">
+              <span class="badge">Evening</span>
+              <span class="font-mono text-muted" style="font-size: 0.72rem;">Refined</span>
+            </div>
+            <h4>Midnight Silk Contrast</h4>
+            <div class="swatch-group" style="margin-bottom: 0.8rem;">
+              <span class="color-swatch" style="background-color: #D8BC94; width: 20px; height: 20px;"></span>
+              <span class="color-swatch" style="background-color: #121110; width: 20px; height: 20px;"></span>
+              <span class="color-swatch" style="background-color: #D4AF37; width: 20px; height: 20px;"></span>
+            </div>
+            <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1rem;">
+              Bias-cut champagne silk slip dress framed by masculine wool tailoring.
+            </p>
+            <a href="outfits.html?item=w-7" class="btn btn-sm btn-primary" style="width: 100%;">Use This Look in Outfit Builder →</a>
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="inspiration-item" data-category="relaxed minimal">
+          <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=800&auto=format&fit=crop" alt="Cashmere Knitwear" loading="lazy" />
+          <div class="look-meta">
+            <div class="flex-between items-center" style="margin-bottom: 0.4rem;">
+              <span class="badge badge-gold">Weekend</span>
+              <span class="font-mono text-muted" style="font-size: 0.72rem;">Minimal</span>
+            </div>
+            <h4>Brushed Cashmere Proportion</h4>
+            <div class="swatch-group" style="margin-bottom: 0.8rem;">
+              <span class="color-swatch" style="background-color: #8C8075; width: 20px; height: 20px;"></span>
+              <span class="color-swatch" style="background-color: #F7F3EB; width: 20px; height: 20px;"></span>
+            </div>
+            <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1rem;">
+              Soft Mongolian ribbed knit tucked loosely into straight trousers.
+            </p>
+            <a href="outfits.html?item=w-4" class="btn btn-sm btn-primary" style="width: 100%;">Use This Look in Outfit Builder →</a>
+          </div>
+        </div>
+
+        <!-- Item 6 -->
+        <div class="inspiration-item" data-category="classic weekend">
+          <img src="https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?q=80&w=800&auto=format&fit=crop" alt="Modern Tailoring" loading="lazy" />
+          <div class="look-meta">
+            <div class="flex-between items-center" style="margin-bottom: 0.4rem;">
+              <span class="badge">Modern</span>
+              <span class="font-mono text-muted" style="font-size: 0.72rem;">Classic</span>
+            </div>
+            <h4>High-Low City Layering</h4>
+            <div class="swatch-group" style="margin-bottom: 0.8rem;">
+              <span class="color-swatch" style="background-color: #25201E; width: 20px; height: 20px;"></span>
+              <span class="color-swatch" style="background-color: #FFFFFF; width: 20px; height: 20px;"></span>
+            </div>
+            <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1rem;">
+              Structured wool blazer paired over clean cotton tee with structured tote bag.
+            </p>
+            <a href="outfits.html?item=w-3" class="btn btn-sm btn-primary" style="width: 100%;">Use This Look in Outfit Builder →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       FOOTER
+       ========================================================================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">EDIT <span class="divider">/</span> FORM</a>
+          <p class="footer-tagline">Your Wardrobe. Your Style. Refined.</p>
+        </div>
+        <div>
+          <h4 class="footer-title">STYLE</h4>
+          <ul class="footer-links">
+            <li><a href="style-profile.html">My Style</a></li>
+            <li><a href="wardrobe.html">Wardrobe</a></li>
+            <li><a href="outfits.html">Outfits</a></li>
+            <li><a href="style-guide.html">Style Guide</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">EXPLORE</h4>
+          <ul class="footer-links">
+            <li><a href="inspiration.html">Inspiration</a></li>
+            <li><a href="style-quiz.html">Style Quiz</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">SUPPORT</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Help</a></li>
+            <li><a href="about.html#privacy">Privacy</a></li>
+            <li><a href="about.html#terms">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 EDIT / FORM. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.querySelectorAll('#inspiration-tabs .tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('#inspiration-tabs .tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.getAttribute('data-filter');
+        
+        document.querySelectorAll('.inspiration-item').forEach(item => {
+          if (filter === 'all' || item.getAttribute('data-category').includes(filter)) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

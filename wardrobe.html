@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Wardrobe — EDIT / FORM</title>
+  <meta name="description" content="Manage your curated digital wardrobe: organize garments by category, season, palette, and style tags to maximize outfit combinations.">
+  <meta property="og:title" content="Digital Wardrobe — EDIT / FORM">
+  <meta property="og:description" content="Organize and refine your clothing pieces with intentional styling tools.">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+
+  <!-- Theme Preload Script -->
+  <script src="assets/js/theme.js"></script>
+</head>
+<body>
+
+  <!-- =========================================================================
+       MANDATORY NAVBAR
+       ========================================================================= -->
+  <header class="header">
+    <div class="container navbar">
+      <a href="index.html" class="brand-logo" aria-label="EDIT / FORM Home">
+        EDIT <span class="divider">/</span> FORM
+      </a>
+
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item">
+            <a href="style-profile.html" class="nav-link dropdown-toggle" aria-expanded="false">
+              My Style
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+            <ul class="nav-dropdown">
+              <li><a href="style-profile.html"><span>✦</span> Style Profile</a></li>
+              <li><a href="style-quiz.html"><span>✦</span> Style Quiz</a></li>
+              <li><a href="style-profile.html#color-palette"><span>✦</span> Color Preferences</a></li>
+              <li><a href="style-profile.html#silhouettes"><span>✦</span> Fit &amp; Silhouette</a></li>
+              <li><a href="style-profile.html#style-goals"><span>✦</span> Style Goals</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a href="wardrobe.html" class="nav-link active">Wardrobe</a></li>
+          <li class="nav-item"><a href="outfits.html" class="nav-link">Outfits</a></li>
+          <li class="nav-item"><a href="style-guide.html" class="nav-link">Style Guide</a></li>
+          <li class="nav-item"><a href="inspiration.html" class="nav-link">Inspiration</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="theme-toggle" id="theme-toggle-btn" aria-label="Toggle theme">
+            <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+          <a href="login.html" class="nav-link" style="font-weight: 600;">Login</a>
+          <a href="signup.html" class="nav-link" style="font-weight: 600;">Sign Up</a>
+          <a href="style-quiz.html" class="btn btn-primary btn-sm">Build My Style</a>
+        </div>
+      </nav>
+
+      <button class="hamburger" id="hamburger-btn" aria-label="Toggle mobile menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-backdrop" id="mobile-backdrop"></div>
+  <aside class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+    <div>
+      <div class="mobile-nav-header">
+        <a href="index.html" class="brand-logo">EDIT <span class="divider">/</span> FORM</a>
+        <button class="btn-icon" id="mobile-close-btn" aria-label="Close menu">✕</button>
+      </div>
+      <ul class="mobile-nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li>
+          <button class="mobile-dropdown-btn">My Style <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="mobile-submenu">
+            <li><a href="style-profile.html">✦ Style Profile</a></li>
+            <li><a href="style-quiz.html">✦ Style Quiz</a></li>
+            <li><a href="style-profile.html#color-palette">✦ Color Preferences</a></li>
+            <li><a href="style-profile.html#silhouettes">✦ Fit &amp; Silhouette</a></li>
+            <li><a href="style-profile.html#style-goals">✦ Style Goals</a></li>
+          </ul>
+        </li>
+        <li><a href="wardrobe.html" class="active">Wardrobe</a></li>
+        <li><a href="outfits.html">Outfits</a></li>
+        <li><a href="style-guide.html">Style Guide</a></li>
+        <li><a href="inspiration.html">Inspiration</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="mobile-actions">
+      <a href="login.html" class="btn btn-secondary" style="width: 100%;">Login</a>
+      <a href="style-quiz.html" class="btn btn-primary" style="width: 100%;">Build My Style</a>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       MAIN CONTENT: DIGITAL WARDROBE
+       ========================================================================= -->
+  <main class="section">
+    <div class="container">
+      
+      <!-- Page Header -->
+      <div class="flex-between items-center" style="margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <span class="eyebrow">Digital Closet Inventory</span>
+          <h1 style="font-size: clamp(2.2rem, 4vw, 3.2rem);">My Wardrobe</h1>
+          <p class="text-lead" style="margin: 0;">Organize, filter, and plan looks from your personal clothing collection.</p>
+        </div>
+        <div class="flex gap-sm">
+          <button class="btn btn-primary" onclick="openModal('add-item-modal')">
+            + Add New Item
+          </button>
+          <a href="outfits.html" class="btn btn-secondary">
+            Outfit Builder →
+          </a>
+        </div>
+      </div>
+
+      <!-- Toolbar: Category Tabs & Filters -->
+      <div class="wardrobe-toolbar">
+        
+        <!-- Category Tabs -->
+        <div class="wardrobe-tabs" id="category-tabs" role="tablist">
+          <button class="tab-btn active" data-category="all" role="tab" aria-selected="true">All Pieces</button>
+          <button class="tab-btn" data-category="tops" role="tab" aria-selected="false">Tops</button>
+          <button class="tab-btn" data-category="bottoms" role="tab" aria-selected="false">Bottoms</button>
+          <button class="tab-btn" data-category="dresses" role="tab" aria-selected="false">Dresses</button>
+          <button class="tab-btn" data-category="outerwear" role="tab" aria-selected="false">Outerwear</button>
+          <button class="tab-btn" data-category="shoes" role="tab" aria-selected="false">Shoes</button>
+          <button class="tab-btn" data-category="accessories" role="tab" aria-selected="false">Accessories</button>
+        </div>
+
+        <!-- Filter & Search Controls -->
+        <div class="filter-bar">
+          <!-- Search input -->
+          <div class="search-input-wrap">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="wardrobe-search" placeholder="Search wardrobe items..." aria-label="Search wardrobe" />
+          </div>
+
+          <!-- Color filter -->
+          <select class="filter-select" id="filter-color" aria-label="Filter by color">
+            <option value="all">All Colors</option>
+            <option value="Ivory">Ivory / Cream</option>
+            <option value="Black">Black</option>
+            <option value="Espresso">Espresso / Brown</option>
+            <option value="Taupe">Taupe / Oatmeal</option>
+            <option value="Olive">Olive</option>
+            <option value="Champagne">Champagne</option>
+            <option value="White">White</option>
+          </select>
+
+          <!-- Occasion filter -->
+          <select class="filter-select" id="filter-occasion" aria-label="Filter by occasion">
+            <option value="all">All Occasions</option>
+            <option value="Work">Work</option>
+            <option value="Weekend">Weekend</option>
+            <option value="Dinner">Dinner</option>
+            <option value="Travel">Travel</option>
+            <option value="Everyday">Everyday</option>
+          </select>
+
+          <!-- Style filter -->
+          <select class="filter-select" id="filter-style" aria-label="Filter by style tag">
+            <option value="all">All Styles</option>
+            <option value="Minimal">Minimal</option>
+            <option value="Tailored">Tailored</option>
+            <option value="Classic">Classic</option>
+            <option value="Relaxed">Relaxed</option>
+            <option value="Modern">Modern</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Count & Clear Indicators -->
+      <div class="flex-between items-center" style="margin-bottom: 1.5rem;">
+        <span class="font-mono text-muted" id="item-count-label" style="font-size: 0.85rem;">Showing 12 pieces</span>
+        <button class="btn btn-ghost btn-sm" id="reset-filters-btn" style="display: none;">Reset Filters ✕</button>
+      </div>
+
+      <!-- Wardrobe Items Grid -->
+      <div class="wardrobe-grid" id="wardrobe-items-grid">
+        <!-- Rendered dynamically by wardrobe.js / script below -->
+      </div>
+
+      <!-- Empty State Container -->
+      <div id="wardrobe-empty-state" class="card text-center" style="display: none; padding: 4rem 2rem;">
+        <h3 style="margin-bottom: 0.5rem;">No Wardrobe Pieces Found</h3>
+        <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Try clearing your search query or filters to reveal all garments.</p>
+        <button class="btn btn-secondary" onclick="resetAllFilters()">Reset All Filters</button>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       ADD WARDROBE ITEM MODAL
+       ========================================================================= -->
+  <div class="modal-backdrop" id="add-item-modal">
+    <div class="modal-content">
+      <button class="modal-close-btn" onclick="closeModal('add-item-modal')">✕</button>
+      <span class="eyebrow">New Wardrobe Piece</span>
+      <h3 style="margin-bottom: 1.2rem;">Add to Digital Wardrobe</h3>
+
+      <form id="add-item-form">
+        <div class="form-group">
+          <label class="form-label" for="new-item-name">Item Name *</label>
+          <input type="text" class="form-control" id="new-item-name" placeholder="e.g. Silk Crepe Button-Down" required />
+        </div>
+
+        <div class="grid grid-2 gap-md">
+          <div class="form-group">
+            <label class="form-label" for="new-item-category">Category *</label>
+            <select class="form-control" id="new-item-category" required>
+              <option value="tops">Tops</option>
+              <option value="bottoms">Bottoms</option>
+              <option value="dresses">Dresses</option>
+              <option value="outerwear">Outerwear</option>
+              <option value="shoes">Shoes</option>
+              <option value="accessories">Accessories</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="new-item-color">Color Family *</label>
+            <select class="form-control" id="new-item-color" required>
+              <option value="Ivory">Ivory / Cream</option>
+              <option value="Black">Black</option>
+              <option value="Espresso">Espresso / Brown</option>
+              <option value="Taupe">Taupe / Oatmeal</option>
+              <option value="Olive">Olive</option>
+              <option value="Champagne">Champagne</option>
+              <option value="White">White</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-2 gap-md">
+          <div class="form-group">
+            <label class="form-label" for="new-item-season">Season</label>
+            <select class="form-control" id="new-item-season">
+              <option value="All Seasons">All Seasons</option>
+              <option value="Spring / Summer">Spring / Summer</option>
+              <option value="Autumn / Winter">Autumn / Winter</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="new-item-occasion">Primary Occasion</label>
+            <select class="form-control" id="new-item-occasion">
+              <option value="Work">Work</option>
+              <option value="Weekend">Weekend</option>
+              <option value="Dinner">Dinner</option>
+              <option value="Travel">Travel</option>
+              <option value="Everyday">Everyday</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="new-item-style">Style Tag</label>
+          <select class="form-control" id="new-item-style">
+            <option value="Minimal">Minimal</option>
+            <option value="Tailored">Tailored</option>
+            <option value="Classic">Classic</option>
+            <option value="Relaxed">Relaxed</option>
+            <option value="Modern">Modern</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="new-item-image">Garment Photography Preset</label>
+          <select class="form-control" id="new-item-image">
+            <option value="https://images.unsplash.com/photo-1598033129183-c4f50c736f10?q=80&w=800&auto=format&fit=crop">Linen Shirt (Ivory)</option>
+            <option value="https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=800&auto=format&fit=crop">Tailored Trousers (Espresso)</option>
+            <option value="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?q=80&w=800&auto=format&fit=crop">Double-Breasted Blazer (Oatmeal)</option>
+            <option value="https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=800&auto=format&fit=crop">Cashmere Knit (Taupe)</option>
+            <option value="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=800&auto=format&fit=crop">Leather Ankle Boots (Black)</option>
+            <option value="https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=800&auto=format&fit=crop">Structured Tote (Taupe)</option>
+            <option value="https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=800&auto=format&fit=crop">Silk Slip Dress (Champagne)</option>
+            <option value="https://images.unsplash.com/photo-1560769629-975ec94e6a86?q=80&w=800&auto=format&fit=crop">Minimal Sneakers (Ivory)</option>
+            <option value="https://images.unsplash.com/photo-1508427953056-b00b8d78ebf5?q=80&w=800&auto=format&fit=crop">Linen Trousers (Olive)</option>
+            <option value="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=800&auto=format&fit=crop">Draped Trench (Taupe)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="new-item-notes">Styling Notes</label>
+          <textarea class="form-control" id="new-item-notes" rows="2" placeholder="e.g. 100% Organic washed silk; best paired with straight trousers."></textarea>
+        </div>
+
+        <div class="flex gap-md" style="margin-top: 1.8rem;">
+          <button type="submit" class="btn btn-primary" style="flex: 1;">Add to Wardrobe</button>
+          <button type="button" class="btn btn-secondary" onclick="closeModal('add-item-modal')">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       FOOTER
+       ========================================================================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">EDIT <span class="divider">/</span> FORM</a>
+          <p class="footer-tagline">Your Wardrobe. Your Style. Refined.</p>
+        </div>
+        <div>
+          <h4 class="footer-title">STYLE</h4>
+          <ul class="footer-links">
+            <li><a href="style-profile.html">My Style</a></li>
+            <li><a href="wardrobe.html">Wardrobe</a></li>
+            <li><a href="outfits.html">Outfits</a></li>
+            <li><a href="style-guide.html">Style Guide</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">EXPLORE</h4>
+          <ul class="footer-links">
+            <li><a href="inspiration.html">Inspiration</a></li>
+            <li><a href="style-quiz.html">Style Quiz</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">SUPPORT</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Help</a></li>
+            <li><a href="about.html#privacy">Privacy</a></li>
+            <li><a href="about.html#terms">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 EDIT / FORM. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/wardrobe.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    let activeCategory = 'all';
+
+    function renderWardrobe() {
+      if (!window.WardrobeManager) return;
+      const searchVal = document.getElementById('wardrobe-search').value;
+      const colorVal = document.getElementById('filter-color').value;
+      const occasionVal = document.getElementById('filter-occasion').value;
+      const styleVal = document.getElementById('filter-style').value;
+
+      const filtered = window.WardrobeManager.filterItems({
+        category: activeCategory,
+        search: searchVal,
+        color: colorVal,
+        occasion: occasionVal,
+        styleTag: styleVal
+      });
+
+      const grid = document.getElementById('wardrobe-items-grid');
+      const emptyState = document.getElementById('wardrobe-empty-state');
+      const countLabel = document.getElementById('item-count-label');
+      const resetBtn = document.getElementById('reset-filters-btn');
+
+      const isFiltered = activeCategory !== 'all' || searchVal || colorVal !== 'all' || occasionVal !== 'all' || styleVal !== 'all';
+      if (resetBtn) resetBtn.style.display = isFiltered ? 'inline-block' : 'none';
+
+      if (countLabel) countLabel.textContent = `Showing ${filtered.length} piece${filtered.length === 1 ? '' : 's'}`;
+
+      if (filtered.length === 0) {
+        grid.style.display = 'none';
+        emptyState.style.display = 'block';
+        return;
+      }
+
+      grid.style.display = 'grid';
+      emptyState.style.display = 'none';
+
+      grid.innerHTML = filtered.map(item => `
+        <div class="wardrobe-card" id="card-${item.id}">
+          <div class="item-thumb">
+            <img src="${item.image}" alt="${item.name}" loading="lazy" />
+            <div class="item-actions-overlay">
+              <button class="btn-icon" title="Delete piece" onclick="deleteWardrobePiece('${item.id}')" style="background: var(--bg-surface);">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="3 6 5 6 21 6"></polyline>
+                  <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="item-details">
+            <div>
+              <span class="item-meta">${item.category.toUpperCase()} · ${item.color}</span>
+              <h4 class="item-title">${item.name}</h4>
+              <div class="item-tags">
+                <span class="badge">${item.styleTag}</span>
+                <span class="badge badge-gold">${item.occasion}</span>
+                ${item.season !== 'All Seasons' ? `<span class="badge">${item.season}</span>` : ''}
+              </div>
+              ${item.notes ? `<p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.4rem; line-height: 1.4;">${item.notes}</p>` : ''}
+            </div>
+            <div class="item-footer-action">
+              <span style="font-size: 0.78rem; color: var(--text-muted); font-family: var(--font-mono);">IN WARDROBE</span>
+              <a href="outfits.html?item=${item.id}" class="btn btn-sm btn-ghost" style="font-weight: 600;">
+                Use in Outfit →
+              </a>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function deleteWardrobePiece(id) {
+      if (confirm('Remove this piece from your digital wardrobe?')) {
+        window.WardrobeManager.deleteItem(id);
+        renderWardrobe();
+        if (window.showToast) window.showToast('Garment removed from wardrobe', 'info');
+      }
+    }
+
+    function resetAllFilters() {
+      activeCategory = 'all';
+      document.querySelectorAll('#category-tabs .tab-btn').forEach(b => {
+        b.classList.toggle('active', b.getAttribute('data-category') === 'all');
+      });
+      document.getElementById('wardrobe-search').value = '';
+      document.getElementById('filter-color').value = 'all';
+      document.getElementById('filter-occasion').value = 'all';
+      document.getElementById('filter-style').value = 'all';
+      renderWardrobe();
+    }
+
+    // Category Tabs click binding
+    document.querySelectorAll('#category-tabs .tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('#category-tabs .tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeCategory = btn.getAttribute('data-category');
+        renderWardrobe();
+      });
+    });
+
+    // Inputs change binding
+    ['wardrobe-search', 'filter-color', 'filter-occasion', 'filter-style'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.addEventListener('input', renderWardrobe);
+        el.addEventListener('change', renderWardrobe);
+      }
+    });
+
+    document.getElementById('reset-filters-btn').addEventListener('click', resetAllFilters);
+
+    // Add Item form submission
+    document.getElementById('add-item-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('new-item-name').value;
+      const category = document.getElementById('new-item-category').value;
+      const color = document.getElementById('new-item-color').value;
+      const season = document.getElementById('new-item-season').value;
+      const occasion = document.getElementById('new-item-occasion').value;
+      const styleTag = document.getElementById('new-item-style').value;
+      const image = document.getElementById('new-item-image').value;
+      const notes = document.getElementById('new-item-notes').value;
+
+      window.WardrobeManager.addItem({
+        name, category, color, season, occasion, styleTag, image, notes
+      });
+
+      closeModal('add-item-modal');
+      e.target.reset();
+      renderWardrobe();
+      if (window.showToast) {
+        window.showToast(`"${name}" successfully added to your wardrobe!`, 'success');
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', renderWardrobe);
+  </script>
+</body>
+</html>

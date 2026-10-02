@@ -1,0 +1,207 @@
+/* ==========================================================================
+   EDIT / FORM — THEME SYSTEM (LIGHT & DARK MODE)
+   Tokens, palettes, surface layers & dynamic CSS variables
+   ========================================================================== */
+
+:root {
+  /* Brand Typography */
+  --font-editorial: 'DM Serif Display', Georgia, serif;
+  --font-primary: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Space Grotesk', monospace, sans-serif;
+
+  /* Base Spacing System */
+  --space-2xs: 0.25rem;   /* 4px */
+  --space-xs:  0.5rem;    /* 8px */
+  --space-sm:  0.75rem;   /* 12px */
+  --space-md:  1rem;      /* 16px */
+  --space-lg:  1.5rem;    /* 24px */
+  --space-xl:  2rem;      /* 32px */
+  --space-2xl: 3rem;      /* 48px */
+  --space-3xl: 4.5rem;    /* 72px */
+  --space-4xl: 6rem;      /* 96px */
+
+  /* Border Radii */
+  --radius-xs: 3px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-editorial: 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+
+  /* Elevation / Shadows (Default Light) */
+  --shadow-subtle: 0 2px 8px rgba(28, 25, 23, 0.04);
+  --shadow-card: 0 8px 24px -4px rgba(28, 25, 23, 0.07);
+  --shadow-hover: 0 16px 36px -6px rgba(28, 25, 23, 0.12);
+  --shadow-modal: 0 24px 60px -12px rgba(28, 25, 23, 0.22);
+  --shadow-glow: 0 0 30px rgba(197, 168, 128, 0.18);
+}
+
+/* ==========================================================================
+   LIGHT THEME (Default)
+   Warm ivory, soft beige, espresso, charcoal, taupe, muted olive, champagne
+   ========================================================================== */
+:root,
+[data-theme="light"] {
+  --color-scheme: light;
+
+  /* Backgrounds */
+  --bg-body: #FBF9F5;
+  --bg-surface: #FFFFFF;
+  --bg-surface-elevated: #F6F3EC;
+  --bg-surface-subtle: #F0EAE1;
+  --bg-alt: #F3EFE7;
+  --bg-overlay: rgba(28, 25, 23, 0.55);
+  --bg-glass: rgba(251, 249, 245, 0.82);
+  --bg-glass-card: rgba(255, 255, 255, 0.75);
+
+  /* Typography Colors */
+  --text-primary: #1C1917;       /* Espresso charcoal */
+  --text-secondary: #4E4742;     /* Medium espresso */
+  --text-muted: #79716B;         /* Warm taupe gray */
+  --text-tertiary: #A69E96;      /* Light warm taupe */
+  --text-inverse: #FBF9F5;
+
+  /* Borders & Dividers */
+  --border-subtle: #EDE7DD;
+  --border-medium: #DED6C9;
+  --border-focus: #1C1917;
+  --border-accent: #C5A880;
+
+  /* Brand Accents & Editorial Palette */
+  --accent-primary: #1C1917;     /* High-fashion primary black/espresso */
+  --accent-primary-hover: #332F2C;
+  --accent-gold: #C5A880;        /* Soft Champagne */
+  --accent-gold-light: #F4ECE1;
+  --accent-olive: #5A6351;       /* Muted Olive */
+  --accent-olive-light: #EEF2EB;
+  --accent-taupe: #8C8075;       /* Warm Taupe */
+  --accent-taupe-light: #F5F2EF;
+  --accent-terracotta: #A45D4B;  /* Earthy Terracotta */
+  --accent-terracotta-light: #FBF0ED;
+  --accent-cream: #F5EFEB;
+
+  /* Feedback / Status */
+  --status-success: #3A6351;
+  --status-success-bg: #EDF5F0;
+  --status-warning: #A16207;
+  --status-warning-bg: #FEF9C3;
+  --status-error: #991B1B;
+  --status-error-bg: #FEF2F2;
+  --status-info: #3B5A75;
+  --status-info-bg: #F0F5FA;
+
+  /* Interactive States */
+  --interactive-hover: rgba(28, 25, 23, 0.04);
+  --interactive-active: rgba(28, 25, 23, 0.08);
+
+  /* Badge / Tag */
+  --badge-bg: #EFE9DF;
+  --badge-text: #3D3732;
+
+  /* Inputs */
+  --input-bg: #FFFFFF;
+  --input-border: #DED6C9;
+  --input-focus-border: #1C1917;
+  --input-placeholder: #9E968E;
+}
+
+/* ==========================================================================
+   DARK THEME
+   Deep espresso, charcoal, rich onyx, warm bronze, champagne, muted olive
+   ========================================================================== */
+[data-theme="dark"] {
+  --color-scheme: dark;
+
+  /* Backgrounds */
+  --bg-body: #11100F;           /* Deep espresso charcoal base */
+  --bg-surface: #181715;        /* Rich dark surface */
+  --bg-surface-elevated: #22201D;/* Slightly lifted surface */
+  --bg-surface-subtle: #2B2824;  /* Muted dark surface */
+  --bg-alt: #151412;
+  --bg-overlay: rgba(0, 0, 0, 0.78);
+  --bg-glass: rgba(18, 16, 15, 0.85);
+  --bg-glass-card: rgba(28, 26, 24, 0.75);
+
+  /* Typography Colors */
+  --text-primary: #F7F4EE;       /* Warm ivory white */
+  --text-secondary: #D4CDC3;     /* Soft warm beige */
+  --text-muted: #9E958A;         /* Medium muted taupe */
+  --text-tertiary: #6E675F;      /* Deep taupe */
+  --text-inverse: #11100F;
+
+  /* Borders & Dividers */
+  --border-subtle: #292622;
+  --border-medium: #3B3630;
+  --border-focus: #D8BC94;
+  --border-accent: #D8BC94;
+
+  /* Brand Accents & Editorial Palette */
+  --accent-primary: #EDE6DA;     /* Warm ivory button primary in dark mode */
+  --accent-primary-hover: #FFFFFF;
+  --accent-gold: #D8BC94;        /* Soft Champagne (illuminated) */
+  --accent-gold-light: #2C261E;
+  --accent-olive: #7B8770;       /* Muted Olive */
+  --accent-olive-light: #222720;
+  --accent-taupe: #B3A79B;       /* Warm Taupe */
+  --accent-taupe-light: #282420;
+  --accent-terracotta: #C97762;  /* Earthy Terracotta */
+  --accent-terracotta-light: #2E1F1A;
+  --accent-cream: #282420;
+
+  /* Feedback / Status */
+  --status-success: #6EE7B7;
+  --status-success-bg: #064E3B;
+  --status-warning: #FDE047;
+  --status-warning-bg: #713F12;
+  --status-error: #FCA5A5;
+  --status-error-bg: #7F1D1D;
+  --status-info: #93C5FD;
+  --status-info-bg: #1E3A5F;
+
+  /* Interactive States */
+  --interactive-hover: rgba(255, 255, 255, 0.05);
+  --interactive-active: rgba(255, 255, 255, 0.09);
+
+  /* Badge / Tag */
+  --badge-bg: #272421;
+  --badge-text: #E5DFC8;
+
+  /* Inputs */
+  --input-bg: #1B1917;
+  --input-border: #38332E;
+  --input-focus-border: #D8BC94;
+  --input-placeholder: #736C64;
+
+  /* Elevation / Shadows */
+  --shadow-subtle: 0 2px 8px rgba(0, 0, 0, 0.35);
+  --shadow-card: 0 8px 24px -4px rgba(0, 0, 0, 0.45);
+  --shadow-hover: 0 16px 36px -6px rgba(0, 0, 0, 0.6);
+  --shadow-modal: 0 24px 60px -12px rgba(0, 0, 0, 0.85);
+  --shadow-glow: 0 0 30px rgba(216, 188, 148, 0.15);
+}
+
+/* Image treatment for dark mode subtle brightness moderation */
+[data-theme="dark"] img:not(.no-filter) {
+  filter: brightness(0.92) contrast(1.03);
+}
+
+/* Smooth theme transitions */
+body,
+.navbar,
+.card,
+.modal-content,
+.footer,
+.btn,
+.nav-dropdown,
+.drawer {
+  transition: background-color var(--transition-normal),
+              color var(--transition-normal),
+              border-color var(--transition-normal),
+              box-shadow var(--transition-normal);
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login — EDIT / FORM</title>
+  <meta name="description" content="Access your personalized style profile, saved outfit formulas, and digital wardrobe.">
+  <meta property="og:title" content="Login — EDIT / FORM">
+  <meta property="og:description" content="Access your personal style profile and digital wardrobe.">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+
+  <!-- Theme Preload Script -->
+  <script src="assets/js/theme.js"></script>
+</head>
+<body>
+
+  <!-- Minimal Header with Brand & Theme Toggle -->
+  <header class="header">
+    <div class="container navbar">
+      <a href="index.html" class="brand-logo">EDIT <span class="divider">/</span> FORM</a>
+      
+      <div class="flex items-center gap-md">
+        <button class="theme-toggle" aria-label="Toggle theme">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        <a href="index.html" class="btn btn-sm btn-secondary">Return Home</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Split Screen Editorial Auth Wrapper -->
+  <main class="auth-wrapper">
+    <!-- Left Visual Column -->
+    <div class="auth-visual">
+      <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1200&auto=format&fit=crop" alt="Editorial fashion wardrobe composition" />
+      <div class="auth-visual-quote">
+        <blockquote class="font-serif" style="font-size: 1.4rem; line-height: 1.35; margin-bottom: 0.6rem;">
+          “Dressing well is a form of good manners and self-respect.”
+        </blockquote>
+        <span class="font-mono text-muted" style="font-size: 0.78rem;">EDIT / FORM Editorial Atelier</span>
+      </div>
+    </div>
+
+    <!-- Right Form Column -->
+    <div class="auth-form-container">
+      <div class="auth-form-card">
+        <div class="auth-header">
+          <span class="eyebrow">Welcome Back</span>
+          <h1 style="font-size: 2.2rem; margin-bottom: 0.4rem;">Sign In</h1>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">
+            Access your curated style identity and digital wardrobe.
+          </p>
+        </div>
+
+        <form id="login-form" data-ajax="mock" data-success-msg="Welcome back! Signed in to EDIT / FORM.">
+          <div class="form-group">
+            <label class="form-label" for="login-email">Email Address</label>
+            <input type="email" class="form-control" id="login-email" placeholder="name@example.com" required />
+          </div>
+
+          <div class="form-group">
+            <div class="flex-between items-center" style="margin-bottom: 0.45rem;">
+              <label class="form-label" for="login-password" style="margin: 0;">Password</label>
+              <a href="forgot-password.html" style="font-size: 0.78rem; color: var(--accent-taupe); text-decoration: underline;">
+                Forgot Password?
+              </a>
+            </div>
+            <input type="password" class="form-control" id="login-password" placeholder="••••••••" required />
+          </div>
+
+          <div class="form-group flex-between items-center">
+            <label class="checkbox-label">
+              <input type="checkbox" checked />
+              <span>Remember me</span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 1rem;">
+            Login to My Studio →
+          </button>
+        </form>
+
+        <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle); text-align: center; font-size: 0.88rem; color: var(--text-secondary);">
+          Don't have a style profile yet? <a href="signup.html" style="color: var(--accent-gold); font-weight: 600; text-decoration: underline;">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

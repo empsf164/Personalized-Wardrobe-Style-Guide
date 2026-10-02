@@ -1,0 +1,214 @@
+/* ==========================================================================
+   EDIT / FORM — RESPONSIVE STYLESHEET
+   Carefully tuned breakpoints for seamless luxury mobile-to-desktop UX
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Desktop & Large Screens (1440px+)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1380px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Medium Desktop & Small Laptops (max-width: 1200px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1200px) {
+  .nav-desktop {
+    gap: 1.1rem;
+  }
+  .nav-links {
+    gap: 1rem;
+  }
+  .steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .outfit-builder-layout {
+    grid-template-columns: 1fr;
+  }
+  .inspiration-masonry {
+    column-count: 2;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Tablet & iPad Landscapes (max-width: 1024px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .nav-desktop {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+  .hero-content {
+    max-width: 100%;
+    text-align: center;
+  }
+  .hero-actions {
+    justify-content: center;
+  }
+  .hero-stats {
+    justify-content: center;
+  }
+  .floating-style-card {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    margin: -40px auto 0 auto;
+    width: 90%;
+    max-width: 380px;
+  }
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+  .auth-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .auth-visual {
+    display: none;
+  }
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .quiz-result-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Small Tablets & Large Phones (max-width: 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .navbar {
+    height: 70px;
+  }
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+  .wardrobe-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .filter-bar {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .search-input-wrap {
+    min-width: 100%;
+  }
+  .filter-select {
+    width: 100%;
+  }
+  .canvas-slots-grid {
+    grid-template-columns: 1fr;
+  }
+  .inspiration-masonry {
+    column-count: 1;
+  }
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.8rem;
+  }
+  .quiz-options-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.85rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Mobile Phones (320px - 480px)
+   (320px, 360px, 375px, 390px, 414px, 425px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .container {
+    padding-left: 1.1rem;
+    padding-right: 1.1rem;
+  }
+  .brand-logo {
+    font-size: 1.3rem;
+  }
+  .hero-stats {
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: center;
+  }
+  .hero-stat-item {
+    text-align: center;
+  }
+  .quiz-options-grid {
+    grid-template-columns: 1fr;
+  }
+  .quiz-container {
+    padding: 1.4rem 1rem;
+  }
+  .card {
+    padding: 1.4rem 1.1rem;
+  }
+  .btn-lg {
+    padding: 0.85rem 1.6rem;
+    font-size: 0.92rem;
+    width: 100%;
+  }
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .hero-actions .btn {
+    width: 100%;
+  }
+  .formula-recipe {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .modal-content {
+    padding: 1.5rem 1.2rem;
+  }
+  #toast-container {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+  }
+  .toast {
+    min-width: auto;
+    width: 100%;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Touch-Friendly Improvements
+   -------------------------------------------------------------------------- */
+@media (hover: none) and (pointer: coarse) {
+  .wardrobe-card .item-actions-overlay {
+    opacity: 1;
+    transform: translateY(0);
+    position: static;
+    flex-direction: row;
+    padding-top: 0.5rem;
+  }
+  .outfit-slot.filled .slot-overlay {
+    opacity: 1;
+    background: linear-gradient(0deg, rgba(0,0,0,0.6) 0%, transparent 60%);
+  }
+}
