@@ -61,16 +61,26 @@
     position: relative;
     bottom: auto;
     left: auto;
-    margin: -40px auto 0 auto;
-    width: 90%;
-    max-width: 380px;
+    margin: 1.5rem auto 0 auto;
+    width: 100%;
+    max-width: 420px;
+    animation: none;
   }
   .footer-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 2.5rem;
   }
 
-  /* Align 2 cards in one row across all sections on all pages */
+  /* Grid 12 collapses to 1 column */
+  .grid-12 {
+    grid-template-columns: 1fr !important;
+  }
+  .grid-12 > div,
+  .grid-12 > [style*="grid-column"] {
+    grid-column: 1 / -1 !important;
+  }
+
+  /* Align 2 cards in one row across all sections on tablets */
   .grid-2,
   .grid-3,
   .grid-4,
@@ -121,32 +131,64 @@
   .quiz-result-grid {
     grid-template-columns: 1fr;
   }
+
+  .atelier-map-card {
+    grid-template-columns: 1fr !important;
+  }
+  .map-location-panel {
+    border-right: none !important;
+    border-bottom: 1px solid var(--border-subtle) !important;
+  }
 }
 
 /* --------------------------------------------------------------------------
-   Small Tablets (max-width: 768px)
+   Small Tablets & Mobile Landscapes (max-width: 768px)
    -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+  }
+  .section {
+    padding: 3.8rem 0;
+  }
   .navbar {
     height: 70px;
   }
   .wardrobe-toolbar {
     flex-direction: column;
     align-items: stretch;
+    gap: 1.2rem;
+  }
+  .wardrobe-tabs {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 0.2rem 0.2rem 0.6rem;
+    scrollbar-width: none;
+  }
+  .wardrobe-tabs::-webkit-scrollbar {
+    display: none;
+  }
+  .wardrobe-tabs .tab-btn {
+    flex-shrink: 0;
   }
   .filter-bar {
     width: 100%;
-    flex-direction: column;
-    align-items: stretch;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
   }
-  .search-input-wrap {
-    min-width: 100%;
-  }
+  .search-input-wrap,
   .filter-select {
-    width: 100%;
+    width: 100% !important;
+    min-width: 100% !important;
   }
   .canvas-slots-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.9rem;
   }
   .footer-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -157,29 +199,114 @@
     text-align: center;
     gap: 0.8rem;
   }
+  .guide-hero-banner {
+    padding: 2rem 1.4rem;
+  }
+  .guide-hero-banner .flex-between {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.4rem;
+  }
+  .guide-hero-banner .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .map-location-panel {
+    padding: 1.6rem 1.2rem;
+  }
+  .map-embed-wrapper,
+  .map-embed-wrapper iframe {
+    min-height: 300px;
+    height: 300px;
+  }
 }
 
 /* --------------------------------------------------------------------------
    Mobile Phones (max-width: 580px)
    -------------------------------------------------------------------------- */
 @media (max-width: 580px) {
+  .section {
+    padding: 3rem 0;
+  }
   .grid-2,
   .grid-3,
   .grid-4,
   .steps-grid,
   .wardrobe-grid,
-  .outfits-grid {
+  .outfits-grid,
+  #home-quiz-preview-grid,
+  #guide-palette-container,
+  #guide-silhouettes-container,
+  #guide-essentials-container,
+  #guide-formulas-container,
+  #profile-palette-grid,
+  #profile-silhouettes-grid,
+  #slot-options-grid {
     grid-template-columns: 1fr !important;
+    gap: 1.2rem !important;
   }
+
   .grid-2 > :last-child:nth-child(odd),
   .grid-3 > :last-child:nth-child(odd),
   .grid-4 > :last-child:nth-child(odd),
   .steps-grid > :last-child:nth-child(odd),
   .wardrobe-grid > :last-child:nth-child(odd),
-  .outfits-grid > :last-child:nth-child(odd) {
+  .outfits-grid > :last-child:nth-child(odd),
+  #home-quiz-preview-grid > :last-child:nth-child(odd),
+  #profile-palette-grid > :last-child:nth-child(odd),
+  #profile-silhouettes-grid > :last-child:nth-child(odd) {
     grid-column: 1 / -1 !important;
     max-width: 100% !important;
   }
+
+  /* Interactive Discovery Card Footer */
+  .quiz-preview-footer {
+    flex-direction: column !important;
+    gap: 1rem !important;
+    text-align: center !important;
+    align-items: stretch !important;
+  }
+  .quiz-preview-footer .btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  /* Composition Tool Section */
+  .composition-actions {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+  .composition-actions .btn {
+    width: 100% !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0.75rem 1.2rem;
+  }
+  .composition-list li {
+    font-size: 0.86rem;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+  .composition-list li strong {
+    min-width: 75px;
+  }
+
+  /* Outfits card compositions */
+  .outfit-card-composition {
+    grid-template-rows: repeat(2, 140px) !important;
+  }
+  .canvas-slots-grid {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+  }
+  .outfit-slot {
+    min-height: 160px !important;
+  }
+
   .inspiration-masonry {
     column-count: 1 !important;
   }
@@ -188,22 +315,25 @@
     gap: 2rem;
   }
   .quiz-options-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr !important;
     gap: 0.85rem;
+  }
+  .contact-social-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
   }
 }
 
 /* --------------------------------------------------------------------------
-   Mobile Phones (320px - 480px)
-   (320px, 360px, 375px, 390px, 414px, 425px)
+   Mobile Phones Small (320px - 480px)
    -------------------------------------------------------------------------- */
 @media (max-width: 480px) {
   .container {
-    padding-left: 1.1rem;
-    padding-right: 1.1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
   .brand-logo {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
   }
   .hero-stats {
     flex-direction: column;
@@ -223,7 +353,7 @@
     padding: 1.4rem 1.1rem;
   }
   .btn-lg {
-    padding: 0.85rem 1.6rem;
+    padding: 0.85rem 1.5rem;
     font-size: 0.92rem;
     width: 100%;
   }
@@ -239,18 +369,13 @@
     align-items: flex-start;
   }
   .modal-content {
-    padding: 1.5rem 1.2rem;
+    padding: 1.5rem 1.1rem;
+    width: 94%;
   }
-  .map-location-badge {
-    position: static;
-    border-radius: 0;
-    max-width: 100%;
-  }
-  .map-embed-wrapper {
-    height: auto;
-  }
+  .map-embed-wrapper,
   .map-embed-wrapper iframe {
-    height: 280px;
+    height: 260px;
+    min-height: 260px;
   }
   #toast-container {
     left: 1rem;
@@ -260,6 +385,9 @@
   .toast {
     min-width: auto;
     width: 100%;
+  }
+  .contact-social-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -276,6 +404,6 @@
   }
   .outfit-slot.filled .slot-overlay {
     opacity: 1;
-    background: linear-gradient(0deg, rgba(0,0,0,0.6) 0%, transparent 60%);
+    background: linear-gradient(0deg, rgba(12, 11, 10, 0.9) 0%, rgba(12, 11, 10, 0.45) 60%, transparent 100%);
   }
 }

@@ -96,13 +96,36 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --------------------------------------------------------------------------
-  // 3. Highlight Active Navigation Link
+  // 3. Highlight Active Navigation Link & Submenu States
   // --------------------------------------------------------------------------
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-link, .mobile-nav-links a').forEach(link => {
     const href = link.getAttribute('href');
-    if (href === currentPath || (currentPath === '' && href === 'index.html')) {
+    if (!href) return;
+    const cleanHref = href.split('#')[0];
+    if (cleanHref === currentPath || (currentPath === '' && cleanHref === 'index.html')) {
       link.classList.add('active');
+      
+      // Expand and highlight parent mobile dropdown if inside submenu
+      const mobileSubmenu = link.closest('.mobile-submenu');
+      if (mobileSubmenu) {
+        mobileSubmenu.classList.add('is-open');
+        const parentBtn = mobileSubmenu.previousElementSibling;
+        if (parentBtn && parentBtn.classList.contains('mobile-dropdown-btn')) {
+          parentBtn.classList.add('active');
+          const icon = parentBtn.querySelector('svg');
+          if (icon) icon.style.transform = 'rotate(180deg)';
+        }
+      }
+
+      // Highlight desktop dropdown parent if applicable
+      const desktopDropdown = link.closest('.nav-dropdown');
+      if (desktopDropdown) {
+        const parentToggle = desktopDropdown.previousElementSibling;
+        if (parentToggle && parentToggle.classList.contains('dropdown-toggle')) {
+          parentToggle.classList.add('active');
+        }
+      }
     }
   });
 
@@ -236,18 +259,65 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Social Auth Buttons (Google & Apple)
-  document.querySelectorAll('.social-btn').forEach(btn => {
+  // --------------------------------------------------------------------------
+  // 8. Password Visibility Toggle System
+  // --------------------------------------------------------------------------
+  document.querySelectorAll('.password-toggle-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      const provider = btn.innerText.trim();
-      window.showToast(`Authenticating with ${provider}...`, 'info');
-      setTimeout(() => {
-        window.showToast(`Welcome! Successfully signed in with ${provider}.`, 'success');
-        setTimeout(() => {
-          window.location.href = 'style-profile.html';
-        }, 1000);
-      }, 800);
+      const wrap = btn.closest('.password-input-wrap');
+      if (!wrap) return;
+      const input = wrap.querySelector('input');
+      const eyeOpen = btn.querySelector('.icon-eye-open');
+      const eyeClosed = btn.querySelector('.icon-eye-closed');
+      if (!input) return;
+
+      if (input.type === 'password') {
+        input.type = 'text';
+        if (eyeOpen) eyeOpen.style.display = 'none';
+        if (eyeClosed) eyeClosed.style.display = 'block';
+        btn.setAttribute('aria-label', 'Hide password');
+      } else {
+        input.type = 'password';
+        if (eyeOpen) eyeOpen.style.display = 'block';
+        if (eyeClosed) eyeClosed.style.display = 'none';
+        btn.setAttribute('aria-label', 'Show password');
+      }
+    });
+  });
+
+  // --------------------------------------------------------------------------
+  // 9. Global Back to Top Button
+  // --------------------------------------------------------------------------
+  let backToTopBtn = document.getElementById('back-to-top');
+  if (!backToTopBtn) {
+    backToTopBtn = document.createElement('button');
+    backToTopBtn.id = 'back-to-top';
+    backToTopBtn.className = 'back-to-top';
+    backToTopBtn.setAttribute('aria-label', 'Back to top of page');
+    backToTopBtn.innerHTML = `
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 15l-6-6-6 6"/>
+      </svg>
+    `;
+    document.body.appendChild(backToTopBtn);
+  }
+
+  const handleScrollBackToTop = () => {
+    if (window.scrollY > 280) {
+      backToTopBtn.classList.add('is-visible');
+    } else {
+      backToTopBtn.classList.remove('is-visible');
+    }
+  };
+
+  window.addEventListener('scroll', handleScrollBackToTop, { passive: true });
+  handleScrollBackToTop();
+
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
     });
   });
 });

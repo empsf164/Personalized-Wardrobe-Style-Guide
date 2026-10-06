@@ -31,6 +31,7 @@
       <nav class="nav-desktop" aria-label="Main Navigation">
         <ul class="nav-links">
           <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
           <li class="nav-item">
             <a href="style-profile.html" class="nav-link dropdown-toggle" aria-expanded="false">
               My Style
@@ -47,7 +48,6 @@
           <li class="nav-item"><a href="wardrobe.html" class="nav-link">Wardrobe</a></li>
           <li class="nav-item"><a href="outfits.html" class="nav-link">Outfits</a></li>
           <li class="nav-item"><a href="style-guide.html" class="nav-link">Style Guide</a></li>
-          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
           <li class="nav-item"><a href="contact.html" class="nav-link active">Contact</a></li>
         </ul>
 
@@ -72,6 +72,7 @@
       </div>
       <ul class="mobile-nav-links">
         <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
         <li>
           <button class="mobile-dropdown-btn">My Style <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
           <ul class="mobile-submenu">
@@ -85,7 +86,6 @@
         <li><a href="wardrobe.html">Wardrobe</a></li>
         <li><a href="outfits.html">Outfits</a></li>
         <li><a href="style-guide.html">Style Guide</a></li>
-        <li><a href="about.html">About</a></li>
         <li><a href="contact.html" class="active">Contact</a></li>
       </ul>
     </div>
@@ -233,17 +233,17 @@
         </div>
 
         <div class="atelier-map-card">
-          <div class="map-embed-wrapper">
-            <!-- Location Info Floating Badge -->
-            <div class="map-location-badge">
-              <span class="badge badge-gold" id="map-studio-badge" style="margin-bottom: 0.5rem; display: inline-block;">Milan Flagship Atelier</span>
-              <h4 id="map-studio-address" style="font-size: 1rem; margin-bottom: 0.3rem;">Via Monte Napoleone 18, 20121 Milano MI, Italy</h4>
-              <p id="map-studio-details" style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.75rem;">Private VIP Fitting Suite · Tuesday to Saturday by reservation</p>
-              <a id="map-studio-link" href="https://maps.google.com/?q=Via+Monte+Napoleone+18+Milano" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary" style="width: 100%; text-align: center;">
-                Open in Google Maps ↗
-              </a>
-            </div>
+          <!-- Location Info Panel (Side-by-side, Non-overlapping) -->
+          <div class="map-location-panel">
+            <span class="badge badge-gold" id="map-studio-badge" style="margin-bottom: 0.75rem; align-self: flex-start;">Milan Flagship Atelier</span>
+            <h4 id="map-studio-address" style="font-size: 1.15rem; margin-bottom: 0.4rem; line-height: 1.4;">Via Monte Napoleone 18, 20121 Milano MI, Italy</h4>
+            <p id="map-studio-details" style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 1.25rem; line-height: 1.5;">Private VIP Fitting Suite · Tuesday to Saturday by reservation</p>
+            <a id="map-studio-link" href="https://maps.google.com/?q=Via+Monte+Napoleone+18+Milano" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary" style="width: 100%; text-align: center; justify-content: center;">
+              Open in Google Maps ↗
+            </a>
+          </div>
 
+          <div class="map-embed-wrapper">
             <!-- Embedded Google Map -->
             <iframe 
               id="atelier-map-iframe"

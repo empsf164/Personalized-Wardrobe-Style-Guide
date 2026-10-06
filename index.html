@@ -37,6 +37,9 @@
             <a href="index.html" class="nav-link active">Home</a>
           </li>
           <li class="nav-item">
+            <a href="about.html" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
             <a href="style-profile.html" class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true">
               My Style
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -59,9 +62,6 @@
           </li>
           <li class="nav-item">
             <a href="style-guide.html" class="nav-link">Style Guide</a>
-          </li>
-          <li class="nav-item">
-            <a href="about.html" class="nav-link">About</a>
           </li>
           <li class="nav-item">
             <a href="contact.html" class="nav-link">Contact</a>
@@ -96,6 +96,7 @@
 
       <ul class="mobile-nav-links">
         <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
         <li>
           <button class="mobile-dropdown-btn">
             My Style
@@ -114,7 +115,6 @@
         <li><a href="wardrobe.html">Wardrobe</a></li>
         <li><a href="outfits.html">Outfits</a></li>
         <li><a href="style-guide.html">Style Guide</a></li>
-        <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
@@ -296,7 +296,7 @@
             </div>
           </div>
 
-          <div class="flex-between items-center" style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle);">
+          <div class="quiz-preview-footer flex-between items-center" style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle);">
             <span style="font-size: 0.88rem; color: var(--text-muted);">Step 2 of 8 in Style Engine</span>
             <a href="style-quiz.html" class="btn btn-primary">Continue Full Style Quiz →</a>
           </div>
@@ -424,22 +424,22 @@
 
             <div class="card" style="padding: 1.8rem; margin-bottom: 1.5rem;">
               <h4 style="margin-bottom: 0.8rem;">Current Composition: The Architectural Workday</h4>
-              <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem;">
-                <li style="display: flex; gap: 0.6rem; font-size: 0.9rem;">
-                  <strong style="color: var(--accent-taupe); width: 85px;">Top:</strong> Relaxed Silk Linen Shirt (Ivory)
+              <ul class="composition-list">
+                <li>
+                  <strong style="color: var(--accent-taupe); width: 85px; flex-shrink: 0;">Top:</strong> <span>Relaxed Silk Linen Shirt (Ivory)</span>
                 </li>
-                <li style="display: flex; gap: 0.6rem; font-size: 0.9rem;">
-                  <strong style="color: var(--accent-taupe); width: 85px;">Bottom:</strong> High-Waist Tailored Trousers (Espresso)
+                <li>
+                  <strong style="color: var(--accent-taupe); width: 85px; flex-shrink: 0;">Bottom:</strong> <span>High-Waist Tailored Trousers (Espresso)</span>
                 </li>
-                <li style="display: flex; gap: 0.6rem; font-size: 0.9rem;">
-                  <strong style="color: var(--accent-taupe); width: 85px;">Outerwear:</strong> Double-Breasted Wool Blazer (Oatmeal)
+                <li>
+                  <strong style="color: var(--accent-taupe); width: 85px; flex-shrink: 0;">Outerwear:</strong> <span>Double-Breasted Wool Blazer (Oatmeal)</span>
                 </li>
-                <li style="display: flex; gap: 0.6rem; font-size: 0.9rem;">
-                  <strong style="color: var(--accent-taupe); width: 85px;">Shoes:</strong> Point-Toe Leather Ankle Boots (Black)
+                <li>
+                  <strong style="color: var(--accent-taupe); width: 85px; flex-shrink: 0;">Shoes:</strong> <span>Point-Toe Leather Ankle Boots (Black)</span>
                 </li>
               </ul>
 
-              <div class="flex gap-sm" style="flex-wrap: wrap;">
+              <div class="composition-actions">
                 <a href="outfits.html" class="btn btn-primary btn-sm">Open Outfit Builder</a>
                 <a href="outfits.html#saved" class="btn btn-secondary btn-sm">View Saved Outfits</a>
               </div>
