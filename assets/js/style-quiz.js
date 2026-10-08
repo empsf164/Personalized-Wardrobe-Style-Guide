@@ -26,7 +26,7 @@ const QUIZ_QUESTIONS = [
         value: 'relaxed',
         label: 'Relaxed Neutral',
         desc: 'Fluid linens, soft knits, organic drape and earthy undertones.',
-        image: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=600&auto=format&fit=crop'
+        image: 'assets/images/quiz/archetype-relaxed.jpg'
       },
       {
         value: 'statement',
@@ -64,7 +64,7 @@ const QUIZ_QUESTIONS = [
         value: 'sartorial-navy',
         label: 'Classic Navy & Camel',
         desc: 'Midnight navy, camel tan, crisp alabaster, and cognac.',
-        image: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=600&auto=format&fit=crop'
+        image: 'assets/images/quiz/palette-navy-camel.jpg'
       }
     ]
   },
@@ -78,25 +78,25 @@ const QUIZ_QUESTIONS = [
         value: 'balanced',
         label: 'Balanced & Clean',
         desc: 'Skims the body neatly without constriction; streamlined lines.',
-        image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=600&auto=format&fit=crop'
+        image: 'assets/images/quiz/fit-balanced.jpg'
       },
       {
         value: 'tailored',
         label: 'Tailored & Structured',
         desc: 'Crisp shoulders, defined waist, pressed creases and precision seams.',
-        image: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?q=80&w=600&auto=format&fit=crop'
+        image: 'assets/images/quiz/fit-tailored.jpg'
       },
       {
         value: 'relaxed',
         label: 'Relaxed & Fluid',
         desc: 'Dropped shoulders, wide legs, comfortable ease and tactile soft volume.',
-        image: 'https://images.unsplash.com/photo-1508427953056-b00b8d78ebf5?q=80&w=600&auto=format&fit=crop'
+        image: 'assets/images/quiz/fit-relaxed.jpg'
       },
       {
         value: 'oversized',
         label: 'Architectural Volume',
         desc: 'Deliberate boxy proportions, cocoon coats and sculptural shapes.',
-        image: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=600&auto=format&fit=crop'
+        image: 'assets/images/quiz/fit-oversized.jpg'
       }
     ]
   },
@@ -110,25 +110,25 @@ const QUIZ_QUESTIONS = [
         value: 'work',
         label: 'Executive & Creative Work',
         desc: 'Meetings, studio days, professional engagements and leadership.',
-        image: 'https://images.unsplash.com/photo-1598033129183-c4f50c736f10?q=80&w=600&auto=format&fit=crop'
+        image: 'assets/images/quiz/occ-work.jpg'
       },
       {
         value: 'casual',
         label: 'Everyday & Weekend',
         desc: 'Coffee runs, casual social gatherings, relaxed city exploration.',
-        image: 'https://images.unsplash.com/photo-1560769629-975ec94e6a86?q=80&w=600&auto=format&fit=crop'
+        image: 'assets/images/inspiration/look-linen-sunday.jpg'
       },
       {
         value: 'dinner',
         label: 'Evening Dining & Culture',
         desc: 'Curated dinners, gallery openings, theater and intimate events.',
-        image: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=600&auto=format&fit=crop'
+        image: 'assets/images/inspiration/look-midnight-silk.jpg'
       },
       {
         value: 'travel',
         label: 'Transit & Versatile Travel',
         desc: 'Packable capsule pieces, wrinkle-resistant fabrics and mobility.',
-        image: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=600&auto=format&fit=crop'
+        image: 'assets/images/quiz/occ-travel.jpg'
       }
     ]
   },
@@ -142,25 +142,25 @@ const QUIZ_QUESTIONS = [
         value: 'capsule',
         label: 'Build a Curated Capsule',
         desc: 'Trim closet clutter down to versatile, high-utility essentials.',
-        image: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=600&auto=format&fit=crop'
+        image: 'assets/images/quiz/goal-capsule.jpg'
       },
       {
         value: 'elevate',
         label: 'Elevate Daily Polish',
         desc: 'Make everyday outfits feel intentionally composed and refined.',
-        image: 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=600&auto=format&fit=crop'
+        image: 'assets/images/inspiration/look-city-layering.jpg'
       },
       {
         value: 'simplify',
         label: 'Reduce Decision Fatigue',
         desc: 'Establish go-to outfit formulas that look incredible in seconds.',
-        image: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=600&auto=format&fit=crop'
+        image: 'assets/images/inspiration/look-cashmere-knit.jpg'
       },
       {
         value: 'essentials',
         label: 'Maximize Pieces I Own',
         desc: 'Unlock fresh combinations from existing clothes before buying more.',
-        image: 'https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=600&auto=format&fit=crop'
+        image: 'assets/images/outfits/outfit-workday.jpg'
       }
     ]
   }
